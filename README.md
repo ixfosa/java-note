@@ -1,2 +1,3 @@
-# java-note
-Hello  java
+# Headline
+
+> An awesome project.
