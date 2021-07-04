@@ -1,0 +1,2 @@
+# java-note
+Hello  java
