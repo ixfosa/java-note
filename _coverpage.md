@@ -7,5 +7,5 @@
 > 纸上得来终觉浅，绝知此事要躬行。
 
 [GitHub](https://github.com/ixfosa)
-[Get Started](01-基础知识)
+[Get Started](notes/01-基础知识)
 
