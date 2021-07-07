@@ -42,4 +42,13 @@
   + [package包](http://jnotes.ixfosa.top/#/notes/03-面向对象?id=package包)
   + [单例设计模式](http://jnotes.ixfosa.top/#/notes/03-面向对象?id=单例设计模式)
   + [模板模式](http://jnotes.ixfosa.top/#/notes/03-面向对象?id=模板模式)
++ [异常处理](http://jnotes.ixfosa.top/#/notes/04-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86)
+  - [异常体系](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=异常体系)
+  - [异常处理](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=异常处理)
+  - [finally 块](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=finally-块)
+  - [自定义异常类](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=自定义异常类)
+  - [运行时和编译时异常](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=运行时和编译时异常)
+  - [异常转译和异常链](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=异常转译和异常链)
+  - [Java7 的异常新特性](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=java7-的异常新特性)
+  - [异常处理规则](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=异常处理规则)
 
