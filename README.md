@@ -87,7 +87,7 @@
   - [守护线程（后台线程）](http://jnotes.ixfosa.top/#/notes/06-多线程?id=守护线程（后台线程）)
   - [join方法](http://jnotes.ixfosa.top/#/notes/06-多线程?id=join方法)
   - [ThreadLocal](http://jnotes.ixfosa.top/#/notes/06-多线程?id=threadlocal)
-+ [单例集合](http://jnotes.ixfosa.top/#/notes/07-单例集合))
++ [单例集合](http://jnotes.ixfosa.top/#/notes/07-单例集合)
   - [Collection 接口](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=collection-接口)
   - [Iterator 接口](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=iterator-接口)
   - [List 集合](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=list-集合)
