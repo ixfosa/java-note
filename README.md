@@ -12,7 +12,6 @@
   + [Oracle JDK 和 OpenJDK 的对比](http://jnotes.ixfosa.top/#/notes/01-基础知识?id=oracle-jdk-和-openjdk-的对比)
   + [import java 和 javax 区别](http://jnotes.ixfosa.top/#/notes/01-基础知识?id=import-java-和-javax-区别)
   + [Java 语言“编译与解释并存”](http://jnotes.ixfosa.top/#/notes/01-基础知识?id=java-语言编译与解释并存)
-
 + [基础语法](http://jnotes.ixfosa.top/#/notes/02-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95)
 
   + [注释](http://jnotes.ixfosa.top/#/notes/02-基础语法?id=注释)
@@ -27,7 +26,6 @@
   + [转义字符](http://jnotes.ixfosa.top/#/notes/02-基础语法?id=转义字符)
   + [函数（方法）](http://jnotes.ixfosa.top/#/notes/02-基础语法?id=函数（方法）)
   + [数组](http://jnotes.ixfosa.top/#/notes/02-基础语法?id=数组)
-
 + [面向对象](http://jnotes.ixfosa.top/#/notes/03-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1)
 
   + [类和对象](http://jnotes.ixfosa.top/#/notes/03-面向对象?id=类和对象)
@@ -47,7 +45,6 @@
   + [package包](http://jnotes.ixfosa.top/#/notes/03-面向对象?id=package包)
   + [单例设计模式](http://jnotes.ixfosa.top/#/notes/03-面向对象?id=单例设计模式)
   + [模板模式](http://jnotes.ixfosa.top/#/notes/03-面向对象?id=模板模式)
-
 + [异常处理](http://jnotes.ixfosa.top/#/notes/04-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86)
 
   - [异常体系](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=异常体系)
@@ -58,7 +55,6 @@
   - [异常转译和异常链](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=异常转译和异常链)
   - [Java7 的异常新特性](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=java7-的异常新特性)
   - [异常处理规则](http://jnotes.ixfosa.top/#/notes/04-异常处理?id=异常处理规则)
-
 + [常用类](http://jnotes.ixfosa.top/#/notes/05-常用类)
 
   - [Object](http://jnotes.ixfosa.top/#/notes/05-常用类?id=object)
@@ -77,7 +73,6 @@
   - [UUID通用唯一识别码](http://jnotes.ixfosa.top/#/notes/05-常用类?id=uuid通用唯一识别码)
   - [Base64](http://jnotes.ixfosa.top/#/notes/05-常用类?id=base64)
   - [MessageDigest(md5,sha)](http://jnotes.ixfosa.top/#/notes/05-常用类?id=messagedigestmd5sha)
-
 + [多线程](http://jnotes.ixfosa.top/#/notes/06-多线程)
 
   - [进程和线程](http://jnotes.ixfosa.top/#/notes/06-多线程?id=进程和线程)
@@ -92,5 +87,8 @@
   - [守护线程（后台线程）](http://jnotes.ixfosa.top/#/notes/06-多线程?id=守护线程（后台线程）)
   - [join方法](http://jnotes.ixfosa.top/#/notes/06-多线程?id=join方法)
   - [ThreadLocal](http://jnotes.ixfosa.top/#/notes/06-多线程?id=threadlocal)
-
-  
++ [单例集合](http://jnotes.ixfosa.top/#/notes/07-单例集合))
+  - [Collection 接口](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=collection-接口)
+  - [Iterator 接口](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=iterator-接口)
+  - [List 集合](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=list-集合)
+  - [Set 集合](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=set-集合)
