@@ -92,3 +92,11 @@
   - [Iterator 接口](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=iterator-接口)
   - [List 集合](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=list-集合)
   - [Set 集合](http://jnotes.ixfosa.top/#/notes/07-单例集合?id=set-集合)
++ [泛型](http://jnotes.ixfosa.top/#/notes/08-泛型)
+  - [泛型 genrictiry](http://jnotes.ixfosa.top/#/notes/08-泛型?id=泛型-genrictiry)
+  - [自定义泛型方法](http://jnotes.ixfosa.top/#/notes/08-泛型?id=自定义泛型方法)
+  - [自定义泛型类](http://jnotes.ixfosa.top/#/notes/08-泛型?id=自定义泛型类)
+  - [自定义泛型接口](http://jnotes.ixfosa.top/#/notes/08-泛型?id=自定义泛型接口)
+  - [泛型的上下限](http://jnotes.ixfosa.top/#/notes/08-泛型?id=泛型的上下限)
+  - [擦除和转换](http://jnotes.ixfosa.top/#/notes/08-泛型?id=擦除和转换)
+
