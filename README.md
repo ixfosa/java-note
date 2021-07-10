@@ -99,4 +99,10 @@
   - [自定义泛型接口](http://jnotes.ixfosa.top/#/notes/08-泛型?id=自定义泛型接口)
   - [泛型的上下限](http://jnotes.ixfosa.top/#/notes/08-泛型?id=泛型的上下限)
   - [擦除和转换](http://jnotes.ixfosa.top/#/notes/08-泛型?id=擦除和转换)
++ [双列集合](http://jnotes.ixfosa.top/#/notes/09-%E5%8F%8C%E5%88%97%E9%9B%86%E5%90%88)
+  - [Map 集合](http://jnotes.ixfosa.top/#/notes/09-双列集合?id=map-集合)
+  - [内部类 Map.Entry](http://jnotes.ixfosa.top/#/notes/09-双列集合?id=内部类-mapentry)
+  - [HashMap](http://jnotes.ixfosa.top/#/notes/09-双列集合?id=hashmap)
+  - [TreeMap](http://jnotes.ixfosa.top/#/notes/09-双列集合?id=treemap)
+  - [集合的工具类 Collections](http://jnotes.ixfosa.top/#/notes/09-双列集合?id=集合的工具类-collections)
 
