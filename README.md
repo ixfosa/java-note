@@ -105,4 +105,10 @@
   - [HashMap](http://jnotes.ixfosa.top/#/notes/09-双列集合?id=hashmap)
   - [TreeMap](http://jnotes.ixfosa.top/#/notes/09-双列集合?id=treemap)
   - [集合的工具类 Collections](http://jnotes.ixfosa.top/#/notes/09-双列集合?id=集合的工具类-collections)
++ [jdk1.5特性](http://jnotes.ixfosa.top/#/notes/10-jdk1.5特性)
+  - [静态导入](http://jnotes.ixfosa.top/#/notes/10-jdk1.5特性?id=静态导入)
+  - [增强for循环](http://jnotes.ixfosa.top/#/notes/10-jdk1.5特性?id=增强for循环)
+  - [可变参数](http://jnotes.ixfosa.top/#/notes/10-jdk1.5特性?id=可变参数)
+  - [自动装箱与自动拆箱](http://jnotes.ixfosa.top/#/notes/10-jdk1.5特性?id=自动装箱与自动拆箱)
+  - [枚举](http://jnotes.ixfosa.top/#/notes/10-jdk1.5特性?id=枚举)
 
