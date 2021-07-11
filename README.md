@@ -124,4 +124,10 @@
   - [文件遍历](http://jnotes.ixfosa.top/#/notes/11-IO流?id=文件遍历)
   - [配置文件类 Properties](http://jnotes.ixfosa.top/#/notes/11-IO流?id=配置文件类-properties)
   - [装饰者设计模式](http://jnotes.ixfosa.top/#/notes/11-IO流?id=装饰者设计模式)
++ [网络编程](http://jnotes.ixfosa.top/#/notes/12-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B)
+  - [Socket 通信](http://jnotes.ixfosa.top/#/notes/12-网络编程?id=socket-通信)
+  - [InetAddress(IP类)](http://jnotes.ixfosa.top/#/notes/12-网络编程?id=inetaddressip类)
+  - [流套接字 TCP](http://jnotes.ixfosa.top/#/notes/12-网络编程?id=流套接字-tcp)
+  - [数据报套接字 UDP](http://jnotes.ixfosa.top/#/notes/12-网络编程?id=数据报套接字-udp)
+  - [URLDecoder 和 URLEncoder](http://jnotes.ixfosa.top/#/notes/12-网络编程?id=urldecoder-和-urlencoder)
 
