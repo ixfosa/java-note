@@ -147,4 +147,10 @@
   - [自定义注解](http://jnotes.ixfosa.top/#/notes/14-注解?id=自定义注解)
   - [元注解](http://jnotes.ixfosa.top/#/notes/14-注解?id=元注解)
   - [注解反射](http://jnotes.ixfosa.top/#/notes/14-注解?id=注解反射)
++ [jdk1.8特性](http://jnotes.ixfosa.top/#/notes/15-jdk1.8特性)
+  - [Lambda 表达式](http://jnotes.ixfosa.top/#/notes/15-jdk1.8特性?id=lambda-表达式)
+  - [函数式接口](http://jnotes.ixfosa.top/#/notes/15-jdk1.8特性?id=函数式接口)
+  - [Stream流](http://jnotes.ixfosa.top/#/notes/15-jdk1.8特性?id=stream流)
+  - [方法引用](http://jnotes.ixfosa.top/#/notes/15-jdk1.8特性?id=方法引用)
+  - [默认方法](http://jnotes.ixfosa.top/#/notes/15-jdk1.8特性?id=默认方法)
 
