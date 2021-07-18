@@ -1631,7 +1631,7 @@ public class App_blob {
 ```java
 public class App {
 
-	// 1. 数据库元数据
+	// 1.数据库元数据
 	@Test
 	public void testDB() throws Exception {
 		// 获取连接
@@ -1644,7 +1644,7 @@ public class App {
 		System.out.println(metaData.getDatabaseProductName());
 	}
 	
-	//2. 参数元数据
+	// 2.参数元数据
 	@Test
 	public void testParams() throws Exception {
 		// 获取连接
@@ -1658,7 +1658,6 @@ public class App {
 		ParameterMetaData p_metaDate = pstmt.getParameterMetaData();
 		// 获取参数的个数
 		int count = p_metaDate.getParameterCount();
-		
 		
 		// 测试
 		System.out.println(count);
@@ -1683,7 +1682,7 @@ public class App {
 			int count = rs_metaData.getColumnCount();
             
 			// 2. 遍历，获取每一列的列的名称
-			for (int i=0; i<count; i++) {
+			for (int i = 0; i < count; i++) {
                 
 				// 得到列的名称
 				String columnName = rs_metaData.getColumnName(i + 1);
