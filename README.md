@@ -1,4 +1,4 @@
-# Java-Note<sub>[在线阅读](http://jnotes.ixfosa.top)</sub>>
+# Java-Note<sub>[在线阅读](http://jnotes.ixfosa.top)</sub>
 
 ### [在线阅读](http://jnotes.ixfosa.top)
 
