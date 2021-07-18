@@ -1,8 +1,8 @@
-# Java-Note
+# Java-Note<sub>[在线阅读](http://jnotes.ixfosa.top)</sub>>
 
 ### [在线阅读](http://jnotes.ixfosa.top)
 
-## [基础知识](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
+## [Java SE](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
 
 + [基础知识](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
   - [Java 语言特点](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-基础知识?id=java-语言特点)
@@ -13,7 +13,6 @@
   - [Oracle JDK 和 OpenJDK 的对比](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-基础知识?id=oracle-jdk-和-openjdk-的对比)
   - [import java 和 javax 区别](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-基础知识?id=import-java-和-javax-区别)
   - [Java 语言“编译与解释并存”](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-基础知识?id=java-语言编译与解释并存)
-
 + [基础语法](http://jnotes.ixfosa.top/#/notes/01JavaSE/02-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95)
   - [注释](http://jnotes.ixfosa.top/#/notes/01JavaSE/02-基础语法?id=注释)
   - [标识符和关键字](http://jnotes.ixfosa.top/#/notes/01JavaSE/02-基础语法?id=标识符和关键字)
@@ -152,7 +151,37 @@
   - [默认方法](http://jnotes.ixfosa.top/#/notes/01JavaSE/15-jdk1.8特性?id=默认方法)
 + [JDBC](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc)
 
-+ [Java Web]()
-+ [Framework]()
 
-## 分布式，微服务，并发编程
+
+## Java Web
+
++ 
+
+## Framework
+
++ 
+
+
+
+## 分布式
+
++ 
+
+
+
+## 微服务
+
++ 
+
+
+
+## 并发编程
+
++ 
+
+
+
+## 工程化管理
+
++ 
+
