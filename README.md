@@ -1,6 +1,6 @@
 # Java-Note
 
-### [在线阅读](http://jnotes.ixfosa.top)
+## [在线阅读](http://jnotes.ixfosa.top)
 
 ## [Java SE](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
 
@@ -150,6 +150,20 @@
   - [方法引用](http://jnotes.ixfosa.top/#/notes/01JavaSE/15-jdk1.8特性?id=方法引用)
   - [默认方法](http://jnotes.ixfosa.top/#/notes/01JavaSE/15-jdk1.8特性?id=默认方法)
 + [JDBC](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc)
+  - [JDBC 概述和架构](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=jdbc-概述和架构)
+  - [JDBC 编程步骤](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=jdbc-编程步骤)
+  - [JDBC接口核心的API](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=jdbc接口核心的api)
+  - [JDBC 工具类 JdbcUtil](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=jdbc-工具类-jdbcutil)
+  - [Statement执行sql语句](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=statement执行sql语句)
+  - [PreparedStatement执行sql语句](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=preparedstatement执行sql语句)
+  - [CallableStatement执行存储过程](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=callablestatement执行存储过程)
+  - [预编译sql处理(防止sql注入)](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=预编译sql处理防止sql注入)
+  - [批处理](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=批处理)
+  - [获取自增长值，插入数据](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=获取自增长值，插入数据)
+  - [事务处理](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=事务处理)
+  - [大文本, 二进制类型处理](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=大文本-二进制类型处理)
+  - [获取数据库元数据](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=获取数据库元数据)
+  - [数据库连接池](http://jnotes.ixfosa.top/#/notes/01JavaSE/16-jdbc?id=数据库连接池)
 
 
 
