@@ -2,6 +2,8 @@
 
 ### [在线阅读](http://jnotes.ixfosa.top)
 
+## [基础知识](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
+
 + [基础知识](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
   - [Java 语言特点](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-基础知识?id=java-语言特点)
   - [关于 JVM JDK 和 JRE](http://jnotes.ixfosa.top/#/notes/01JavaSE/01-基础知识?id=关于-jvm-jdk-和-jre)
