@@ -167,13 +167,36 @@
 
 
 
-## Java EE
+## [Java EE]((http://jnotes.ixfosa.top/#/notes/02JavaEE/Tomcat))
 
-+ http协议
-+ Servlet
-+ Jsp
+- [Tomcat](http://jnotes.ixfosa.top/#/notes/02JavaEE/Tomcat)
 
+  + [基本使用](http://jnotes.ixfosa.top/#/notes/02JavaEE/Tomcat?id=基本使用)
+  + [Tomcat的目录结构](http://jnotes.ixfosa.top/#/notes/02JavaEE/Tomcat?id=tomcat的目录结构)
 
+- [HTTP协议](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议)
+
+  + [Http协议概述](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http协议概述)
+  + [Http协议工作原理](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http协议工作原理)
+  + [http协议的特点](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http协议的特点)
+  + [HTTP 版本](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http-版本)
+  + [TCP 长连接](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=tcp-长连接)
+  + [Http 请求](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http-请求)
+  + [Http 响应](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http-响应)
+  + [HTTP content-type](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http-content-type)
+  + [状态消息](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=状态消息)
+
+- [Servlet](http://jnotes.ixfosa.top/#/notes/02JavaEE/Servlet)
+
+- [Filter](http://jnotes.ixfosa.top/#/notes/02JavaEE/Filter)
+
+- [Listener](http://jnotes.ixfosa.top/#/notes/02JavaEE/Listener)
+
+- [Session，Cookie](http://jnotes.ixfosa.top/#/notes/02JavaEE/会话管理)
+
+- [Jsp](http://jnotes.ixfosa.top/#/notes/02JavaEE/Jsp)
+
+  
 
 ## Framework
 
