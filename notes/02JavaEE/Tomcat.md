@@ -1,6 +1,9 @@
 ## 基本使用
 
-1. 下载：apache官网。www.apache.org     http://jakarta.apache.org(产品的主页)
+1. 下载：apache官网。
+
+   + www.apache.org
+   + http://jakarta.apache.org  (产品的主页)
 
 2. 安装版：window （exe、msi） linux（rmp）
    压缩版：window（rar，zip） linux（tar，tar.gz）学习时候使用
