@@ -173,6 +173,7 @@
 
   + [基本使用](http://jnotes.ixfosa.top/#/notes/02JavaEE/Tomcat?id=基本使用)
   + [Tomcat的目录结构](http://jnotes.ixfosa.top/#/notes/02JavaEE/Tomcat?id=tomcat的目录结构)
+  
 - [HTTP协议](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议)
 
   + [Http协议概述](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http协议概述)
@@ -184,6 +185,7 @@
   + [Http 响应](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http-响应)
   + [HTTP content-type](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=http-content-type)
   + [状态消息](http://jnotes.ixfosa.top/#/notes/02JavaEE/HTTP协议?id=状态消息)
+  
 - [Servlet](http://jnotes.ixfosa.top/#/notes/02JavaEE/Servlet)
   + [Web开发入门](http://jnotes.ixfosa.top/#/notes/02JavaEE/Servlet?id=web开发入门)
   + [Hello Servlet](http://jnotes.ixfosa.top/#/notes/02JavaEE/Servlet?id=hello-servlet)
@@ -202,8 +204,17 @@
   + [web应用下资源文件的读取](http://jnotes.ixfosa.top/#/notes/02JavaEE/Servlet?id=web应用下资源文件的读取)
   + [文件上传下载](http://jnotes.ixfosa.top/#/notes/02JavaEE/Servlet?id=文件上传下载)
   + [代码抽取](http://jnotes.ixfosa.top/#/notes/02JavaEE/Servlet?id=其他代码抽取)
+  
 - [Session，Cookie](http://jnotes.ixfosa.top/#/notes/02JavaEE/会话管理)
+
+  + [会话管理](http://jnotes.ixfosa.top/#/notes/02JavaEE/会话管理?id=会话管理)
+  + [Cookie 技术](http://jnotes.ixfosa.top/#/notes/02JavaEE/会话管理?id=cookie-技术)
+  + [Session技术](http://jnotes.ixfosa.top/#/notes/02JavaEE/会话管理?id=session技术)
+  + [案例-cookie-商品推荐](http://jnotes.ixfosa.top/#/notes/02JavaEE/会话管理?id=案例-cookie-商品推荐)
+  + [案例-Session-登录](http://jnotes.ixfosa.top/#/notes/02JavaEE/会话管理?id=案例-session-登录)
+
 - [Filter](http://jnotes.ixfosa.top/#/notes/02JavaEE/Filter)
+
 - [Listener](http://jnotes.ixfosa.top/#/notes/02JavaEE/Listener)
 
 - [Jsp](http://jnotes.ixfosa.top/#/notes/02JavaEE/Jsp)
