@@ -2530,7 +2530,7 @@ public class FileServlet extends HttpServlet {
 
 
 
-## 其他代码抽取
+## 代码抽取
 
 ### BeanFactory
 
