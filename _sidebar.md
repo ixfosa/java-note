@@ -21,7 +21,7 @@
   + [Session，Cookie](notes/02JavaEE/会话管理)
   + [Filter](notes/02JavaEE/Filter)
   + [Listener](notes/02JavaEE/Listener)
-  + [Jsp](notes/02JavaEE/Jsp)
+  + [JSP](notes/02JavaEE/JSP)
 
 
 

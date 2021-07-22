@@ -148,7 +148,7 @@ public class MySessionListener implements HttpSessionListener{
 
 + 当 ServletContext 对象被销毁时，激发contextDestroyed(ServletContextEvent sce)方法。
 
-> 提问，servletContext域对象何时创建和销毁：
+> ServletContext域对象何时创建和销毁：
 >
 > + 创建：服务器启动针对每一个web应用创建servletcontext
 >
