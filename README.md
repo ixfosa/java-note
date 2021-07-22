@@ -234,7 +234,6 @@
 - [JSP](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP)
 
   + [基本认识](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=基本认识)
-  
   + [Hello JSP](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=hello-jsp)
   + [Jsp的执行过程](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp的执行过程)
   + [Jsp的生命周期](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp的生命周期)
