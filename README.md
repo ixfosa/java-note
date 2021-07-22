@@ -233,6 +233,20 @@
 
 - [JSP](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP)
 
+  + [基本认识](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=基本认识)
+  
+  + [Hello JSP](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=hello-jsp)
+  + [Jsp的执行过程](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp的执行过程)
+  + [Jsp的生命周期](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp的生命周期)
+  + [JSP 语法](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp-语法)
+  + [JSP 的三大指令](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp-的三大指令)
+  + [JSP行为](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp行为)
+  + [JSP隐含(内置)对象](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp隐含内置对象)
+  + [EL表达式](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=el表达式)
+  + [jsp标签](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp标签)
+  + [JavaBean 咖啡豆](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=javabean-咖啡豆)
+  + [web开发模式](http://jnotes.ixfosa.top/#/notes/02JavaEE/JSP?id=web开发模式)
+  
   
 
 ## Framework
