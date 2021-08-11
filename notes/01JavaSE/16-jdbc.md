@@ -1093,16 +1093,6 @@ ALTER TABLE employee ADD CONSTRAINT FK_employee_dept_deptId
 	FOREIGN KEY(dept_id) REFERENCES dept(deptId) ;
 ```
 
-编码总体思路
-
-保存员工及其对应的部门！
-
-​	步骤：
-
-1. 
-
-2. 
-
 
 
 ### 设计javabean
