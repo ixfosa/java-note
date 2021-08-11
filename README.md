@@ -234,19 +234,18 @@
 
 - [JSP](http://java.ixfosa.top/#/notes/02JavaEE/JSP)
 
-- [基本认识](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=基本认识)
-
-  + [Hello JSP](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=hello-jsp)
-  + [Jsp的执行过程](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp的执行过程)
-  + [Jsp的生命周期](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp的生命周期)
-  + [JSP 语法](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp-语法)
-  + [JSP 的三大指令](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp-的三大指令)
-  + [JSP行为](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp行为)
-  + [JSP隐含(内置)对象](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp隐含内置对象)
-  + [EL表达式](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=el表达式)
-  + [jsp标签](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp标签)
-  + [JavaBean 咖啡豆](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=javabean-咖啡豆)
-  + [web开发模式](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=web开发模式)
+  - [基本认识](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=基本认识)
+  - [Hello JSP](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=hello-jsp)
+  - [Jsp的执行过程](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp的执行过程)
+  - [Jsp的生命周期](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp的生命周期)
+  - [JSP 语法](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp-语法)
+  - [JSP 的三大指令](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp-的三大指令)
+  - [JSP行为](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp行为)
+  - [JSP隐含(内置)对象](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp隐含内置对象)
+  - [EL表达式](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=el表达式)
+  - [jsp标签](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=jsp标签)
+  - [JavaBean 咖啡豆](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=javabean-咖啡豆)
+  - [web开发模式](http://java.ixfosa.top/#/notes/02JavaEE/JSP?id=web开发模式)
 
   
 
