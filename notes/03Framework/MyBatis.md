@@ -46,7 +46,7 @@ MyBatis 使用简单的 XML 或注解用于配置和原始映射，将接口和 
 7. 输入参数映射：输入参数类型可以是 Map、List 等集合类型，也可以是基本数据类型和 POJO 类型。输入参数映射过程类似于 JDBC 对 preparedStatement 对象设置参数的过程。
 8. 输出结果映射：输出结果类型可以是 Map、 List 等集合类型，也可以是基本数据类型和 POJO 类型。输出结果映射过程类似于 JDBC 对结果集的解析过程。
 
-![MyBatis 的工作原理](../../_media/MyBatis 的工作原理.png)
+![MyBatis 的工作原理](../../_media/MyBatis的工作原理.png)
 
 
 
@@ -80,13 +80,15 @@ MyBatis 的核心组件分为 4 个部分
 
 具体是由 DefaultSqlSessionFactory 去实现的，而 SqlSessionManager 使用在多线程的环境中，它的具体实现依靠 DefaultSqlSessionFactory，它们之间的关系如图所示。
 
-![SqlSessionFactory 的生成](../../_media/SqlSessionFactory 的生成.png)
+
 
 每个基于 MyBatis 的应用都是以一个 SqlSessionFactory 的实例为中心的，而 SqlSessionFactory 唯一的作用就是生产 MyBatis 的核心接口对象 SqlSession，所以它的责任是唯一的。往往会采用单例模式处理它
 
 
 
 ### XML 构建 SqlSessionFactory
+
+![SqlSessionFactory的生成](/../_media/SqlSessionFactory的生成.png)
 
 在 MyBatis 中的 XML 分为两类，一类是基础配置文件，通常只有一个，主要是配置一些最基本的上下文参数和运行环境；另一类是映射文件，它可以配置映射关系、SQL、参数等信息。
 
