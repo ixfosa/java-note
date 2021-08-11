@@ -88,7 +88,7 @@ MyBatis 的核心组件分为 4 个部分
 
 ### XML 构建 SqlSessionFactory
 
-![SqlSessionFactory的生成](/../_media/SqlSessionFactory的生成.png)
+![SqlSessionFactory的生成](../../_media/SqlSessionFactory的生成.png)
 
 在 MyBatis 中的 XML 分为两类，一类是基础配置文件，通常只有一个，主要是配置一些最基本的上下文参数和运行环境；另一类是映射文件，它可以配置映射关系、SQL、参数等信息。
 
