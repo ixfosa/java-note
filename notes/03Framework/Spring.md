@@ -34,7 +34,7 @@ Spring 框架采用分层架构，根据不同的功能被划分成了多个模�
    - JMS 模块：指 Java消息服务，包含的功能为生产和消费的信息。
    - `Transactions` 事务模块：支持编程和声明式事务管理实现特殊接口类，并为所有的 POJO。
 
-4. ####  其他模块
+4. **其他模块**
 
    Spring的其他模块还有 AOP、Aspects、Instrumentation 以及 Test 模块，具体介绍如下。
 
