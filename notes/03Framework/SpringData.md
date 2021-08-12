@@ -848,24 +848,24 @@ public class User implements Serializable {
 
 ### 核心配置文件
 
-在java工程的src路径下创建一个名为`META-INF`的文件夹，在此文件夹下创建一个名为persistence.xml的配置文件
+在java工程的src路径下创建一个名为`META-INF`的文件夹，在此文件夹下创建一个名为`persistence.xml` 的配置文件
 
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
 
-    <!--需要配置persistence-unit节点
-        持久化单元：
+    <!-- 需要配置persistence-unit节点
+         持久化单元：
             name：持久化单元名称
             transaction-type：事务管理的方式
                     JTA：分布式事务管理
                     RESOURCE_LOCAL：本地事务管理
     -->
     <persistence-unit name="myJpa" transaction-type="RESOURCE_LOCAL">
-        <!--配置JPA规范的服务提供商 -->
+        <!-- 配置JPA规范的服务提供商 -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <!--可选配置：配置jpa实现方的配置信息-->
+        <!-- 可选配置：配置jpa实现方的配置信息 -->
         <properties>
             <!-- 数据库信息
               用户名，javax.persistence.jdbc.user
@@ -879,12 +879,12 @@ public class User implements Serializable {
             <property name="javax.persistence.jdbc.password" value="ixfosa"/>
 
 
-            <!--配置jpa实现方(hibernate)的配置信息
-                显示sql           ：   false|true
-                自动创建数据库表    ：  hibernate.hbm2ddl.auto
-                        create      : 程序运行时创建数据库表（如果有表，先删除表再创建）
-                        update      ：程序运行时创建表（如果有表，不会创建表）
-                        none        ：不会创建表
+            <!-- 配置jpa实现方(hibernate)的配置信息
+                 显示sql           ：   false|true
+                 自动创建数据库表    ：  hibernate.hbm2ddl.auto
+                        create     : 程序运行时创建数据库表（如果有表，先删除表再创建）
+                        update     ：程序运行时创建表（如果有表，不会创建表）
+                        none       ：不会创建表
         
               -->
             <property name="hibernate.show_sql" value="true" />
