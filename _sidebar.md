@@ -27,6 +27,7 @@
   + [MyBatis](notes/03Framework/MyBatis)
   + [Spring](notes/03Framework/Spring)
   + [Spring MVC](notes/03Framework/SpringMVC)
+  + [Spring Data](notes/03Framework/SpringData)
   + [Spring Boot](notes/03Framework/SpringBoot)
   + [Shiro](notes/03Framework/Shiro)
 
