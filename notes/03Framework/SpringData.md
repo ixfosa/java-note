@@ -17,8 +17,6 @@
 
    
 
-
-
 ### ORM概述
 
 1. ORM（Object-Relational Mapping）是一种思想
@@ -846,13 +844,7 @@ public class User implements Serializable {
 }
 ```
 
-### 主键生成策略
 
-
-
-
-
-JPA提供的四种标准用法为TABLE,SEQUENCE,IDENTITY,AUTO。
 
 ### 核心配置文件
 
@@ -909,13 +901,12 @@ JPA提供的四种标准用法为TABLE,SEQUENCE,IDENTITY,AUTO。
 
 #### Persistence对象
 
-`Persistence`对象主要作用是用于获取`EntityManagerFactory`对象的 。通过调用该类的`createEntityManagerFactory`静态方法，根据配置文件中持久化单元名称创建`EntityManagerFactory`。
+`Persistence` 对象主要作用是用于获取 `EntityManagerFactory`对象的 。通过调用该类的`createEntityManagerFactory`静态方法，根据配置文件中持久化单元名称创建`EntityManagerFactory`。
 
 ```java
 加载配置文件创建工厂（实体管理器工厂）对象
 String unitName = "myJpa";
 EntityManagerFactory factory = Persistence.createEntityManagerFactory(unitName);
-    
 ```
 
 
