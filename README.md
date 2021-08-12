@@ -296,6 +296,12 @@
   - [统一异常处理](http://java.ixfosa.top/#/notes/03Framework/SpringMVC?id=统一异常处理)
   - [对 Date 类型转换](http://java.ixfosa.top/#/notes/03Framework/SpringMVC?id=对-date-类型转换)
 + [Spring Data](http://java.ixfosa.top/#/notes/03Framework/SpringData)
+  - [Spring-Data 概述](http://java.ixfosa.top/#/notes/03Framework/SpringData?id=spring-data-概述)
+  - [Spring 整合 Hibernate](http://java.ixfosa.top/#/notes/03Framework/SpringData?id=spring-整合-hibernate)
+  - [Hibernate-jpa](http://java.ixfosa.top/#/notes/03Framework/SpringData?id=hibernate-jpa)
+  - [Spring 整合 Hibernate JPA](http://java.ixfosa.top/#/notes/03Framework/SpringData?id=spring-整合-hibernate-jpa)
+  - [Spring整合JPA](http://java.ixfosa.top/#/notes/03Framework/SpringData?id=spring整合jpa)
+  - [Sprinf-Data-Redis](http://java.ixfosa.top/#/notes/03Framework/SpringData?id=sprinf-data-redis)
 
 
 
