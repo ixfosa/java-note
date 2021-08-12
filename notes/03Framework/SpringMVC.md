@@ -11,7 +11,7 @@ SpringMVC 中重要组件
 
 Spring MVC 框架主要由 DispatcherServlet、处理器映射、控制器、视图解析器、视图组成，其工作原理如图所示
 
-![SpringMVC工作原理图](images\SpringMVC工作原理图.png)
+![SpringMVC工作原理图](../../_media/SpringMVC工作原理图.png)
 
 Spring MVC 的工作流程如下：
 
