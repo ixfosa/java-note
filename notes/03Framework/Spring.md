@@ -2981,31 +2981,30 @@ Spring 实现声明式事务管理主要有两种方式：
 
 ### 使用 properties 配置  dataSource 时
 
-2. 加载properties文件 
+1. 加载properties文件 
 
-   ```xml
-   <!-- 加载properties文件 如果需要记载多个配置文件逗号分割 -->
-   <context:property-placeholder location="classpath:db.properties" />
-   ```
+```xml
+<!-- 加载properties文件 如果需要记载多个配置文件逗号分割 -->
+<context:property-placeholder location="classpath:db.properties" />
+```
 
-3. 添加了属性文件记载，并且在中开启自动注入注意的地方
-
+2. 添加了properties文件加载，并且在中开启自动注入注意的地方
    + SqlSessionFactoryBean 的 id 不能叫做 sqlSessionFactory 
    + 把原来通过 ref 引用替换成 value 赋值，自动注入只能影响 ref，不会影响 value 赋值
 
-   ```xml
-   <!-- 创建SqlSessionFactory对象 -->
-   <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
-       <!-- 数据库连接信息来源于dataSource -->
-       <property name="dataSource" ref="dataSource" />
-   </bean>
-   
-   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-       <property name="basePackage" value="com.ixfosa.mapper" />
-        value="com.ixfosa.mapper"></property>
-       <property name="sqlSessionFactoryBeanName" value="factory" />
-   </bean>
-   ```
+```xml
+<!-- 创建SqlSessionFactory对象 -->
+<bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!-- 数据库连接信息来源于dataSource -->
+    <property name="dataSource" ref="dataSource" />
+</bean>
+
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.ixfosa.mapper" />
+     value="com.ixfosa.mapper"></property>
+    <property name="sqlSessionFactoryBeanName" value="factory" />
+</bean>
+```
 
 
 
