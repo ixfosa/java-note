@@ -3025,6 +3025,7 @@ Spring 实现声明式事务管理主要有两种方式：
   +  注意如果 key 为name，会设置值为当前电脑的用户名。` @Value("${name}")`
 
 ```properties
+# user.properties
 user.id=1
 user.username=ixfosa
 user.gender=man
