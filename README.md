@@ -306,36 +306,58 @@
 + [Spring Boot](http://java.ixfosa.top/#/notes/03Framework/SpringBoot)
 
   + [Spring Boot简介](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=spring-boot简介)
+  
   + [快速搭建及核心配置](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=快速搭建及核心配置)
+  
   + [整合Web开发](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合web开发)
     + [整合 Servlet](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-servlet)
     + [整合 Filter](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-filter)
     + [整合 Listener](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-listener)
     + [访问静态资源](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=访问静态资源)
     + [文件上传下载](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=文件上传下载)
+    
   + [整合视图层技术](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合视图层技术)
     + [整合 jsp](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-jsp)
     + [整合 freemarker](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-freemarker)
     + [整合 Thymeleaf](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-thymeleaf)
+    
   + [Thymeleaf基本用法](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=thymeleaf基本用法)
+  
   + [整合持久层技术](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合持久层技术)
     + [整合MyBatis](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合mybatis)
     + [整合JPA](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合jpa)
+    
   + [服务端表单数据校验](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=服务端表单数据校验)
+  
   + [异常处理](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=异常处理)
+  
   + [单元测试](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=单元测试)
+  
   + [热部署](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=热部署)
+
   + [缓存技术](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=缓存技术)
     + [概述](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=概述)
     + [EhCache](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=ehcache)
     + [Spring-Data-Redis](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=spring-data-redis)
+    
   + [定时任务](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=定时任务)
     + [Scheduled 定时任务器](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=scheduled-定时任务器)
     + [cron 表达式讲解](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=cron-表达式讲解)
     + [Quartz 定时任务框架](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=quartz-定时任务框架)
+    
+  + [整合 JWT](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-jwt)
+  
+  + - [JWT 的简介](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=jwt-的简介)
+    - [JWT 的数据结构](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=jwt-的数据结构)
+    - [JWT 的特点](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=jwt-的特点)
+    - [JWT 的简单使用](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=jwt-的简单使用)
+    - [整合 SpringBoot](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-springboot)
+  
   + [Spring Security](http://java.ixfosa.top/#/notes/03Framework/SpringSecurity)
-
+  
   + [Shiro](http://java.ixfosa.top/#/notes/03Framework/Shiro)
+
+
 
 
 
