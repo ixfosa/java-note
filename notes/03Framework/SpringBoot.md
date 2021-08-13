@@ -4122,3 +4122,338 @@ class JwtApplicationTests {
 
 ### 整合 SpringBoot
 
+lombok常用的几个注解：
+
+```java
+@Data: 注在类上，提供类的get、set、equals、hashCode、canEqual、toString方法
+@AllArgsConstructor:注在类上，提供类的全参构造
+@NoArgsConstructor: 注在类上，提供类的无参构造
+@Setter: 注在属性上，提供 set 方法
+@Getter: 注在属性上，提供 get 方法
+@EqualsAndHashCode: 注在类上，提供对应的 equals 和 hashCode 方法
+@Log4j/@Slf4j:  注在类上，提供对应的 Logger 对象，变量名为 log
+@Accessors(chain = true): 链式访问，该注解设置chain=true，生成setter方法返回this
+```
+
+
+
++ 依赖
+
+  ```java
+  <dependencies>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+  
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <optional>true</optional>
+      </dependency>
+      <!--引入jwt-->
+      <dependency>
+          <groupId>com.auth0</groupId>
+          <artifactId>java-jwt</artifactId>
+          <version>3.10.3</version>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+      </dependency>
+  </dependencies>
+  ```
+
++ entity
+
+  ```java
+  @Data
+  @Accessors(chain = true) // 链式访问，该注解设置chain=true，生成setter方法返回this
+  public class User {
+      private Integer id;
+      private String name;
+      private String password;
+  }
+  ```
+
++ dao
+
+  ```java
+  public interface UserDao {
+      User findUserByName(User user);
+  }
+  
+  @Repository
+  public class UserDaoImpl implements UserDao {
+  
+      // 模拟 db 的数据
+      private static Map<String, User> userMap = new HashMap<>();
+  
+      static {
+          userMap.put("ixfosa",  new User("1", "ixfosa", "123"));
+          userMap.put("long", new User("2", "long", "123"));
+          userMap.put("zhong", new User("3", "zhong", "123"));
+      }
+  
+      @Override
+      public User findUserByName(User user) {
+          if (userMap.containsKey(user.getName())) {
+              return userMap.get(user.getName());
+          }
+          return null;
+      }
+  }
+  ```
+
++ service
+
+  ```java
+  public interface UserService {
+      User login(User user);
+  }
+  
+  @Service
+  public class UserServiceImpl implements UserService {
+  
+      @Autowired
+      private UserDao userDao;
+  
+      @Override
+      public User login(User user) {
+          return userDao.findUserByName(user);
+      }
+  }
+  ```
+
++ JWTUtils
+
+  ```java
+  package top.ixfosa.utils;
+  
+  import com.auth0.jwt.JWT;
+  import com.auth0.jwt.JWTCreator;
+  import com.auth0.jwt.algorithms.Algorithm;
+  import com.auth0.jwt.interfaces.DecodedJWT;
+  
+  import java.util.Calendar;
+  import java.util.Map;
+  
+  /**
+   * Created by ixfosa on 2021/8/13 17:50
+   */
+  public class JWTUtils {
+      private static String SECRET = "token!hahaha";
+  
+      /**
+       * 生产token
+       */
+      public static String getToken(Map<String, String> map) {
+          JWTCreator.Builder builder = JWT.create();
+  
+          //payload
+          map.forEach((k, v) -> {
+              builder.withClaim(k, v);
+          });
+  
+          Calendar instance = Calendar.getInstance();
+          instance.add(Calendar.DATE, 7); //默认7天过期
+  
+          builder.withExpiresAt(instance.getTime());//指定令牌的过期时间
+          String token = builder.sign(Algorithm.HMAC256(SECRET));//签名
+          return token;
+      }
+  
+      /**
+       * 验证token
+       */
+      public static DecodedJWT verify(String token) {
+          // 如果有任何验证异常，此处都会抛出异常
+          DecodedJWT decodedJWT = JWT.require(Algorithm.HMAC256(SECRET)).build().verify(token);
+          return decodedJWT;
+      }
+  
+      /**
+       * 获取token中的 payload
+       */
+  //    public static DecodedJWT getToken(String token) {
+  //        DecodedJWT decodedJWT = JWT.require(Algorithm.HMAC256(SECRET)).build().verify(token);
+  //        return decodedJWT;
+  //    }
+  }
+  ```
+
++ cotroller
+
+  ````java
+  package top.ixfosa.controller;
+  
+  import com.auth0.jwt.interfaces.DecodedJWT;
+  import lombok.extern.slf4j.Slf4j;
+  import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.web.bind.annotation.GetMapping;
+  import org.springframework.web.bind.annotation.PostMapping;
+  import org.springframework.web.bind.annotation.RestController;
+  import top.ixfosa.service.UserService;
+  import top.ixfosa.entity.User;
+  import top.ixfosa.utils.JWTUtils;
+  
+  import javax.servlet.http.HttpServletRequest;
+  import java.util.HashMap;
+  import java.util.Map;
+  
+  /**
+   * Created by ixfosa on 2021/8/13 17:39
+   */
+  @RestController
+  @Slf4j
+  public class UserController {
+  
+      @Autowired
+      private UserService userService;
+  
+      @GetMapping("/user/login")
+      public Map<String, Object> login(User user) {
+          log.info("用户名：{}", user.getName());
+          log.info("password: {}", user.getPassword());
+  
+          Map<String, Object> map = new HashMap<>();
+  
+          try {
+              User userDB = userService.login(user);
+  
+              Map<String, String> payload = new HashMap<>();
+              payload.put("id", userDB.getId());
+              payload.put("name", userDB.getName());
+              String token = JWTUtils.getToken(payload);
+  
+              map.put("state", true);
+              map.put("msg", "登录成功");
+              map.put("token", token);
+              return map;
+          } catch (Exception e) {
+              e.printStackTrace();
+              map.put("state", false);
+              map.put("msg", e.getMessage());
+              map.put("token", "");
+          }
+          return map;
+      }
+  
+      @PostMapping("/user/test")
+      public Map<String, Object> test(HttpServletRequest request) {
+          String token = request.getHeader("token");
+          DecodedJWT verify = JWTUtils.verify(token);
+          String id = verify.getClaim("id").asString();
+          String name = verify.getClaim("name").asString();
+          log.info("用户id：{}", id);
+          log.info("用户名: {}", name);
+  
+          // TODO 业务逻辑
+          Map<String, Object> map = new HashMap<>();
+          map.put("state", true);
+          map.put("msg", "请求成功");
+          return map;
+      }
+  }
+  ````
+
++ interceptor
+
+  ```java
+  package top.ixfosa.interceptors;
+  
+  import com.auth0.jwt.exceptions.AlgorithmMismatchException;
+  import com.auth0.jwt.exceptions.InvalidClaimException;
+  import com.auth0.jwt.exceptions.SignatureVerificationException;
+  import com.auth0.jwt.exceptions.TokenExpiredException;
+  import com.fasterxml.jackson.databind.ObjectMapper;
+  import lombok.extern.slf4j.Slf4j;
+  import org.springframework.web.servlet.HandlerInterceptor;
+  import top.ixfosa.utils.JWTUtils;
+  
+  import javax.servlet.http.HttpServletRequest;
+  import javax.servlet.http.HttpServletResponse;
+  import java.security.SignatureException;
+  import java.util.HashMap;
+  import java.util.Map;
+  
+  /**
+   * Created by ixfosa on 2021/8/13 21:11
+   */
+  @Slf4j
+  public class JWTInterceptor implements HandlerInterceptor {
+      @Override
+      public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+          // 获取请求头中的令牌
+          String token = request.getHeader("token");
+          log.info("tiken{}", token);
+          Map<String, Object> map = new HashMap<>();
+  
+          try {
+              JWTUtils.verify(token);
+              return true;
+          } catch (SignatureVerificationException e) {
+              e.printStackTrace();
+              map.put("msg", "签名不一致");
+          } catch (TokenExpiredException e) {
+              e.printStackTrace();
+              map.put("msg", "令牌过期");
+          } catch (AlgorithmMismatchException e) {
+              e.printStackTrace();
+              map.put("msg", "算法不匹配");
+          } catch (InvalidClaimException e) {
+              e.printStackTrace();
+              map.put("msg", "失效的payload");
+          } catch (Exception e) {
+              e.printStackTrace();
+              map.put("msg", "token无效");
+          }
+  
+          map.put("state", false);
+  
+          // 响应到前台: 将map转为json
+          String json = new ObjectMapper().writeValueAsString(map);
+          response.setContentType("application/json;charset=UTF-8");
+          response.getWriter().println(json);
+          return false;
+      }
+  }
+  ```
+
++ config
+
+  ````java
+  @Configuration
+  public class InterceptorConfig implements WebMvcConfigurer {
+      @Override
+      public void addInterceptors(InterceptorRegistry registry) {
+          registry.addInterceptor(new JWTInterceptor())
+                  .addPathPatterns("/user/test")  // 拦截
+                  .excludePathPatterns("/user/login"); // 放行
+      }
+  }
+  ````
+
++ test
+
+  ```java
+  // http://localhost:8080/user/login?name=ixfosa
+  // 返回
+  {
+      "msg": "登录成功",
+      "state": true,
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiaXhmb3NhIiwiaWQiOiIxIiwiZXhwIjoxNjI5NDY0OTkwfQ.Fzdz9XCKXX3peCcD_lFMIIlLC1Bz4ZUj6TrBgbdyY84"
+  }
+  
+  // http://localhost:8080/user/test
+  Headers
+      Key    : token
+  	Value  : eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiaXhmb3NhIiwiaWQiOiIxIiwiZXhwIjoxNjI5NDY0OTkwfQ.Fzdz9XCKXX3peCcD_lFMIIlLC1Bz4ZUj6TrBgbdyY8
+  // 返回 
+  {
+      "msg": "请求成功",
+      "state": true
+  }        
+  ```
+
