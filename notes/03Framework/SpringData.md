@@ -3198,7 +3198,7 @@ public class Many2ManyTest {
 
 
 
-## Sprinf-Data-Redis
+## Spring-Data-Redis
 
 ### jar 文件
 
