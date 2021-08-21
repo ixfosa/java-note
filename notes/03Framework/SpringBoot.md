@@ -2363,6 +2363,399 @@ public class Application {
 
 
 
+### 整合MyBatis-Plus
+
+####  简介
+
+MyBatis-Plus (opens new windo（简称 MP）是一个 MyBatis的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。
+
+![mybatis-plus-framework](../../_media/mybatis-plus-framework.jpg)
+
+
+
+#### 快速开始
+
+1. 数据表
+
+   ```sql
+   CREATE TABLE `user` (
+     `id` bigint NOT NULL,
+     `name` varchar(20) DEFAULT NULL,
+     `age` int NOT NULL,
+     `sex` char(1) DEFAULT NULL,
+     PRIMARY KEY (`id`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+   ```
+
+2. pom.xml文件 
+
+   ```xml
+   <dependencies>
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-web</artifactId>
+       </dependency>
+       <dependency>
+           <groupId>com.baomidou</groupId>
+           <artifactId>mybatis-plus-boot-starter</artifactId>
+           <version>3.4.3.1</version>
+       </dependency>
+       <dependency>
+           <groupId>com.alibaba</groupId>
+           <artifactId>druid</artifactId>
+           <version>1.2.5</version>
+       </dependency>
+       <dependency>
+           <groupId>mysql</groupId>
+           <artifactId>mysql-connector-java</artifactId>
+           <scope>runtime</scope>
+       </dependency>
+       <dependency>
+           <groupId>org.projectlombok</groupId>
+           <artifactId>lombok</artifactId>
+           <optional>true</optional>
+       </dependency>
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-test</artifactId>
+           <scope>test</scope>
+       </dependency>
+   </dependencies>
+   ```
+
+3. application.yml
+
+   ```yaml
+   spring:
+     # 数据库配置
+     datasource:
+       driver-class-name: com.mysql.cj.jdbc.Driver
+       url: jdbc:mysql://127.0.0.1:3306/ssm?useUnicode=true&useSSL=false&characterEncoding=utf-8
+       # 使用druid数据源
+       type: com.alibaba.druid.pool.DruidDataSource
+       username: root
+       password: ixfosa
+   mybatis-plus:
+     configuration:
+       # 日志
+       log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+   ```
+
+4. 实体
+
+   ```java
+   @Data
+   // @TableName()
+   public class User {
+       @TableId  // 主键
+       private Integer id;
+       private String name;
+       private Integer age;
+       private String sex;
+   }
+   ```
+
+5. 编写Mapper类 
+
+   ```java
+   @Repository
+   public interface UserMapper extends BaseMapper<User> {
+   }
+   ```
+
+6. 启动类
+
+   `@MapperScan` 注解，扫描 Mapper 文件夹：
+
+   ```java
+   @SpringBootApplication
+   @MapperScan("top.ixfosa.mapper")
+   public class MpApplication {
+   
+       public static void main(String[] args) {
+           SpringApplication.run(MpApplication.class, args);
+       }
+   }
+   ```
+
+7. 测试
+
+   ```java
+   @SpringBootTest
+   class MpApplicationTests {
+   
+       @Autowired
+       private UserMapper mapper;
+       @Test
+       void test() {
+           mapper.selectList(null).forEach(System.out::println);
+           // User(id=1, name=ixfosa, age=22, sex=1)
+       }
+   }
+   
+   /*
+       ==>  Preparing: SELECT id,name,age,sex FROM user
+       ==> Parameters: 
+       <==    Columns: id, name, age, sex
+       <==        Row: 1, ixfosa, 22, 1
+       <==      Total: 1
+   */
+   ```
+
+   
+
+
+
+
+
+#### 常用注解
+
+##### @TableName-表名映射
+
+当数据库表名和实体类 类名不一致时，需要在 `@TableName()` 中指定数据库表名 
+
+```java
+@TableName(value = "user")  // 可省
+public class User {
+
+}
+```
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE})
+public @interface TableName {
+    String value() default "";
+
+    String schema() default "";
+
+    boolean keepGlobalPrefix() default false;
+
+    String resultMap() default "";
+
+    boolean autoResultMap() default false;
+
+    String[] excludeProperty() default {};
+}
+```
+
+
+
+##### @TableId-主键
+
+```java
+@TableName(value = "user")
+public class User {
+    @TableId( type = IdType.AUTO)
+    private Integer id;
+}
+```
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
+public @interface TableId {
+    String value() default "";
+
+    IdType type() default IdType.NONE;
+}
+
+public enum IdType {
+    AUTO(0),        // 数据库自增
+    NONE(1),		// MP set主键，雪花算法，需要注意主键长度 
+    INPUT(2),		// 需手动赋值
+    
+    ASSIGN_ID(3),	// 如果不设置类型值，默认则使用IdType.ASSIGN_ID策略（自3.3.0起）。
+    				// （雪花算法）该策略会使用雪花算法自动生成主键ID，
+    				// 主键类型为长或字符串（分别对应的MySQL的表字段为BIGINT和VARCHAR）
+    
+    ASSIGN_UUID(4); // UUID， 主键类型为String，对应MySQL的表分段为VARCHAR（32）
+
+    private final int key;
+
+    private IdType(int key) {
+        this.key = key;
+    }
+    public int getKey() {
+        return this.key;
+    }
+}
+```
+
+
+
+##### @TableField-非主键字段
+
+```JAVA
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.ANNOTATION_TYPE})
+public @interface TableField {
+    
+    String value() default "";      // 数据库表字段
+
+    boolean exist() default true;	// 表示是否为是数据库字
+
+    FieldFill fill() default FieldFill.DEFAULT;	// 表示是否自动填充
+    	// DEFAULT       --默认不处理
+        // INSERT        --插入时填充字段(第一次添加的时候)
+        // INSERT_UPDATE --插入和更新时填充字段(最近一次更新的时候,也就是插入和更新都满足)
+        // UPDATE --更新时填充字段
+    
+    boolean select() default true;	//  表示是否查询该字段
+}
+```
+
+
+
+1. 表
+
+   ```sql
+   CREATE TABLE `user` (
+     `id` bigint NOT NULL,
+     `name` varchar(20) DEFAULT NULL,
+     `age` int NOT NULL,
+     `sex` char(1) DEFAULT NULL,
+     `create_time` date DEFAULT NULL,
+     `update_time` date DEFAULT NULL,
+     PRIMARY KEY (`id`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+   ```
+
+2. 实体
+
+   ```java
+   @Data
+   @TableName(value = "user")
+   public class User {
+       @TableId( type = IdType.AUTO)
+       private Integer id;
+   
+       @TableField("name")
+       private String name;
+   
+       @TableField(select = false)
+       private Integer age;
+   
+       private String sex;
+   
+       @TableField(fill = FieldFill.INSERT)
+       private Date createTime;  // 第一次插入写入, 以后不写入
+   
+       @TableField(fill = FieldFill.INSERT_UPDATE)
+       private Date updateTime;  // 第一次插入，以后更新
+   
+       @TableField(exist = false) // false 表示非数据库字段
+       private String desc;
+   }
+   ```
+
+3.  @TableField(fill = FieldFill.INSERT) 处理器
+
+   ```java
+   @Component
+   public class MyMetaObjectHandler implements MetaObjectHandler {
+       // 在 insert 的时候响应相关操作
+       @Override
+       public void insertFill(MetaObject metaObject) {
+           setFieldValByName("createTime", new Date(), metaObject);
+           setFieldValByName("updateTime", new Date(), metaObject);
+       }
+       //  在 update 的时候响应相关操作
+       @Override
+       public void updateFill(MetaObject metaObject) {
+           setFieldValByName("updateTime", new Date(), metaObject);
+       }
+   }
+   ```
+
+4. 测试
+
+   ```java
+   @SpringBootTest
+   class MpApplicationTests {
+   
+       @Autowired
+       private UserMapper mapper;
+   
+       @Test
+       void tableFieldFillTest() {
+           User user = new User();
+           user.setId(2);
+           user.setName("long");
+           user.setAge(22);
+           user.setSex("女");
+           mapper.insert(user);
+           // ==>  Preparing: INSERT INTO user ( id, name, age, sex, create_time, update_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+           // ==> Parameters: 2(Integer), long(String), 22(Integer), 女(String), 2021-08-21 21:54:49.657(Timestamp), 2021-08-21 21:54:49.657(Timestamp)
+           // <==    Updates: 1
+       }
+   
+       @Test
+       void tableFieldFillTest2() {
+           User user = mapper.selectById(2);
+           user.setId(3);
+           mapper.update(user, null);
+           // ==>  Preparing: SELECT id,name,sex,create_time,update_time FROM user WHERE id=?
+           // ==> Parameters: 2(Integer)
+           // <==    Columns: id, name, sex, create_time, update_time
+           // <==        Row: 2, long, 女, 2021-08-21, 2021-08-21
+           // <==      Total: 1
+       }
+   
+       @Test
+       void tableFieldTest() {
+           System.out.println( mapper.selectById(3) );
+           // 没有查询 age， 忽略 desc
+           // ==>  Preparing: SELECT id,name,sex,create_time,update_time FROM user WHERE id=?
+           // ==> Parameters: 3(Integer)
+           // <==      Total: 0
+       }
+   }
+   ```
+
+
+
+##### @EnumValue-枚举类
+
+
+
+##### @Version-标记乐观锁
+
+
+
+##### @TableLogic-映射逻辑删除
+
+
+
+
+
+#### CRUD 操作
+
+
+
+
+
+
+
+#### 自定义SQL、多表关联
+
+
+
+
+
+
+
+#### MyBatisPlus 自动生成
+
+
+
+
+
+
+
 ## 服务端表单数据校验
 
 ### 数据校验

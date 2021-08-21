@@ -14,7 +14,7 @@
 
 身份认证，就是判断一个用户是否为合法用户的处理过程。
 
-认证方式
+认证方式：
 
 + 用户名和口令验证
 + 指纹验证；
@@ -163,7 +163,7 @@
   }
   ```
 
-+ 优点：系统设计时定义好查询工资的权限标识，即使查询工资所需要的角色变化为总经理和部门经理也只需要将“查询工资信息权限”添加到“部门经理角色”的权限列表中，判断逻辑不用修改，系统可扩展性强。
++ 优点：系统设计时定义好查询工资的权限标识，即使查询工资所需要的角色变化为总经理和部门经理也只需要将 “查询工资信息权限”添加到“部门经理角色” 的权限列表中，判断逻辑不用修改，系统可扩展性强。
 
 
 
@@ -173,3 +173,128 @@
 
 ### 粗颗粒度和细颗粒度
 
+1. 什么是粗颗粒度和细颗粒度
+   + 对 `资源类型 ` 的管理称为粗颗粒度权限管理
+     + 即只控制到菜单、按钮、方法，粗粒度的例子
+     + 比如：用户具有用户管理的权限，具有导出订单明细的权限。
+   + 对 `资源实例` 的控制称为细颗粒度权限管理
+     + 即控制到数据级别的权限
+     + 比如：用户只允许修改本部门的员工信息，用户只允许导出自己创建的订单明细。
+
+ 
+
+2. 如何实现粗颗粒度和细颗粒度
+   + 对于粗颗粒度的权限管理可以很容易做 **系统架构级别** 的功能
+     + 即系统功能操作使用统一的粗颗粒度的权限管理。
+   + 对于细颗粒度的权限管理不建议做成系统架构级别的功能
+     + 因为对数据级别的控制是系统的 **业务需求**，随着业务需求的变更业务功能变化的可能性很大，建议对数据级别的权限控制在业务层个性化开发，	
+     + 比如：用户只允许修改自己创建的商品信息可以在 service接口 添加校验实现，service接口需要传入当前操作人的标识，与商品信息创建人标识对比，不一致则不允许修改商品信息。
+
+
+
+### 基于url拦截
+
+实现思路是：
+
++ 将系统操作的每个 url 配置在权限表中
++ 将权限对应到角色
++ 将角色分配给用户
++ 用户访问系统功能通过 Filter 进行过虑，过虑器获取到用户访问的url，只要访问的url是用户分配角色中的url则放行继续访问。
+
+![基于url拦截](E:\notes\java-note\_media\基于url拦截.png)
+
+
+
+
+
+### 使用权限管理框架
+
+使用权限管理框架完成权限管理功能的开发好处：
+
++ 可以节省系统开发时间
++ 提供了完善的认证和授权功能有利于系统扩展维护
+
+Java 权限管理框架：
+
++ Shiro
++ Spring Security
+
+
+
+## 数据库设计
+
+### 权限表
+
+```sql
+CREATE TABLE `sys_permission` (
+  `id` bigint(20) NOT NULL COMMENT '主键',
+  `name` varchar(128) NOT NULL COMMENT '资源名称',
+  `type` varchar(32) NOT NULL COMMENT '资源类型：menu,button,',
+  `url` varchar(128) DEFAULT NULL COMMENT '访问url地址',
+  `percode` varchar(128) DEFAULT NULL COMMENT '权限代码字符串',
+  `parentid` bigint(20) DEFAULT NULL COMMENT '父结点id',
+  `parentids` varchar(128) DEFAULT NULL COMMENT '父结点id列表串',
+  `sortstring` varchar(128) DEFAULT NULL COMMENT '排序号',
+  `available` char(1) DEFAULT NULL COMMENT '是否可用,1：可用，0不可用',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+### 角色表
+
+```sql
+CREATE TABLE `sys_role` (
+  `id` varchar(36) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `available` char(1) DEFAULT NULL COMMENT '是否可用,1：可用，0不可用',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+### 主体表
+
+```sql
+CREATE TABLE `sys_user` (
+  `id` varchar(36) NOT NULL COMMENT '主键',
+  `usercode` varchar(32) NOT NULL COMMENT '账号',
+  `username` varchar(64) NOT NULL COMMENT '姓名',
+  `password` varchar(32) NOT NULL COMMENT '密码',
+  `salt` varchar(64) DEFAULT NULL COMMENT '盐',
+  `locked` char(1) DEFAULT NULL COMMENT '账号是否锁定，1：锁定，0未锁定',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+
+
+### 角色和权限关系表
+
+```sql
+CREATE TABLE `sys_role_permission` (
+  `id` varchar(36) NOT NULL,
+  `sys_role_id` varchar(32) NOT NULL COMMENT '角色id',
+  `sys_permission_id` varchar(32) NOT NULL COMMENT '权限id',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+### 主体和角色关系表
+
+```sql
+CREATE TABLE `sys_user_role` (
+  `id` varchar(36) NOT NULL,
+  `sys_user_id` varchar(32) NOT NULL,
+  `sys_role_id` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+
+
+## 基于url拦截实现
+
+
+
+
+
+## shiro介绍
