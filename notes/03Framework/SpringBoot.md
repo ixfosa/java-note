@@ -2720,6 +2720,176 @@ public @interface TableField {
 
 ##### @EnumValue-枚举类
 
+通用的枚举类注解,将数据库字段映射成实体类的枚举类型成员变量
+
+
+
+```sql
+-- 数据库
+CREATE TABLE `user` (
+  `id` bigint NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `sex` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+```
+
+
+
+1. 第一种通过注解的方式
+
+   ```java
+   @Data
+   @TableName(value = "user")
+   public class User {
+       @TableId( type = IdType.AUTO)
+       private Integer id;
+   
+       private String name;
+   
+       private SexEnum sex;
+   }
+   ```
+
+   ```yaml
+   mybatis-plus:
+       # 配置枚举包
+       # type-enums-package: top.ixfosa.enums # 也可以不写
+       default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+   ```
+
+   ```java
+   public enum SexEnum {
+       MAN(0, "男"),
+       WOMAN(1, "女");
+   
+       @EnumValue  // 存入数据库的字段上加上@EnumValue注解
+       private final Integer code;
+       private final String desc;
+   
+       SexEnum(Integer code, String desc) {
+           this.code = code;
+           this.desc = desc;
+       }
+   
+       public String getDesc() {
+           return desc;
+       }
+   }
+   ```
+
+   ```java
+   @SpringBootTest
+   class MpApplicationTests {
+   
+       @Autowired
+       private UserMapper mapper;
+   
+       @Test
+       void enumsValueTest() {
+           User user = new User();
+           user.setId(3);
+           user.setName("zhong");
+           user.setSex(SexEnum.WOMAN);
+           mapper.insert(user);
+           // ==>  Preparing: INSERT INTO user ( id, name, sex ) VALUES ( ?, ?, ? )
+           // ==> Parameters: 3(Integer), zhong(String), 1(Integer)
+       }
+   
+       @Test
+       void enumsValueTest2() {
+           System.out.println( mapper.selectById(1).getSex().getDesc() );
+           // ==>  Preparing: SELECT id,name,sex FROM user WHERE id=?
+           // ==> Parameters: 1(Integer)
+           // <==    Columns: id, name, sex
+           // <==        Row: 1, long, 1
+           // <==      Total: 1
+           // 女
+       }
+   }
+   ```
+
+
+
+2. 第二种通过实现接口的方式
+
+   ```yaml
+   mybatis-plus:
+       default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+   ```
+
+   ```java
+   @Data
+   @TableName(value = "user")
+   public class User {
+       @TableId( type = IdType.AUTO)
+       private Integer id;
+   
+       private String name;
+   
+       private ISexEnum sex;
+   }
+   ```
+
+   ```java
+   public enum ISexEnum implements IEnum<Integer> {
+       MAN(0, "男"),
+       WOMAN(1, "女");
+   
+       @EnumValue  // 存入数据库的字段上加上@EnumValue注解
+       private final Integer code;
+       private final String desc;
+   
+       ISexEnum(Integer code, String desc) {
+           this.code = code;
+           this.desc = desc;
+       }
+   
+       public String getDesc() {
+           return desc;
+       }
+   
+       @Override
+       public Integer getValue() {
+           return this.code;
+       }
+   }
+   ```
+
+   ```java
+   package top.ixfosa;
+   
+   import org.junit.jupiter.api.Test;
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.boot.test.context.SpringBootTest;
+   import top.ixfosa.entity.User;
+   import top.ixfosa.enums.ISexEnum;
+   import top.ixfosa.enums.SexEnum;
+   import top.ixfosa.mapper.UserMapper;
+   
+   @SpringBootTest
+   class MpApplicationTests {
+   
+       @Autowired
+       private UserMapper mapper;
+   
+       @Test
+       void enumsValueTest() {
+           User user = new User();
+           user.setId(5);
+           user.setName("long");
+           user.setSex(ISexEnum.MAN);
+           mapper.insert(user);
+       }
+   
+       @Test
+       void enumsValueTest2() {
+           System.out.println( mapper.selectById(1).getSex().getDesc() );
+       }
+   }
+   
+   ```
+
 
 
 ##### @Version-标记乐观锁
