@@ -2894,9 +2894,75 @@ CREATE TABLE `user` (
 
 ##### @Version-标记乐观锁
 
+描述：乐观锁注解、标记 `@Verison` 在字段上
+
+> `乐观锁`（Optimistic Locking）是相对悲观锁而言的，乐观锁假设数据一般情况下不会造成冲突，所以在数据进行提交更新的时候，才会正式对数据的冲突进行检测。如果发现冲突了，则返回给用户错误的信息，让用户决定如何去做。乐观锁适用于读操作多的场景，这样可以提高程序的吞吐量。
+
+ ```sql
+ CREATE TABLE `user` (
+   `id` bigint NOT NULL,
+   `name` varchar(20) DEFAULT NULL,
+   `sex` tinyint(1) DEFAULT NULL,
+   `version` tinyint(1) DEFAULT NULL,
+   PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+ ```
+
+```java
+@Data
+@TableName(value = "user")
+public class User {
+    @TableId( type = IdType.AUTO)
+    private Integer id;
+
+    private String name;
+
+    private SexEnum sex;
+
+    @Version   // 乐观锁
+    private Integer version;
+}
+```
+
+```java
+@Configuration
+public class MyBatisPlusConfig {
+
+    @Bean
+    public MybatisPlusInterceptor optimisticLockerInnerInterceptor() {
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        // 乐观锁插件
+        interceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor());
+        return interceptor;
+    }
+}
+```
+
+```java
+@Test
+void versionTest() {
+    User user1 = mapper.selectById(1);
+    user1.setName("ixfosa");
+    User user2 = mapper.selectById(1);
+    user2.setName("zhong");
+
+    mapper.updateById(user1);
+    mapper.updateById(user2);
+}
+/*
+==>  Preparing: UPDATE user SET name=?, sex=?, version=? WHERE id=? AND version=?
+==> Parameters: ixfosa(String), 1(Integer), 7(Integer), 1(Integer), 6(Integer)
+<==    Updates: 1
+
+==>  Preparing: UPDATE user SET name=?, sex=?, version=? WHERE id=? AND version=?
+==> Parameters: zhong(String), 1(Integer), 7(Integer), 1(Integer), 6(Integer)
+<==    Updates: 0
+*/
+```
 
 
-##### @TableLogic-映射逻辑删除
+
+##### @TableLogic-逻辑删除
 
 
 
