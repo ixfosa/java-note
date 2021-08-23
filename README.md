@@ -326,6 +326,7 @@
   + [整合持久层技术](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合持久层技术)
     + [整合MyBatis](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合mybatis)
     + [整合JPA](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合jpa)
+    + [整合MyBatis-Plus](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合mybatis-plus)
     
   + [服务端表单数据校验](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=服务端表单数据校验)
   
@@ -334,7 +335,7 @@
   + [单元测试](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=单元测试)
   
   + [热部署](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=热部署)
-
+  
   + [缓存技术](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=缓存技术)
     + [概述](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=概述)
     + [EhCache](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=ehcache)
