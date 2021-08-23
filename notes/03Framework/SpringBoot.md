@@ -3015,23 +3015,357 @@ null
 
 #### CRUD 操作
 
+##### BaseMapper
+
+```java
+public interface BaseMapper<T> extends Mapper<T> {
+    int insert(T entity);
+    
+    int deleteById(Serializable id);
+    int deleteByMap(@Param("cm") Map<String, Object> columnMap);
+    int delete(@Param("ew") Wrapper<T> queryWrapper);
+    int deleteBatchIds(@Param("coll") Collection<? extends Serializable> idList);
+    
+    int updateById(@Param("et") T entity);
+    int update(@Param("et") T entity, @Param("ew") Wrapper<T> updateWrapper);
+
+    T selectById(Serializable id);
+    List<T> selectBatchIds(@Param("coll") Collection<? extends Serializable> idList);
+    List<T> selectByMap(@Param("cm") Map<String, Object> columnMap);
+    T selectOne(@Param("ew") Wrapper<T> queryWrapper);
+    Integer selectCount(@Param("ew") Wrapper<T> queryWrapper);
+    List<T> selectList(@Param("ew") Wrapper<T> queryWrapper);
+    List<Map<String, Object>> selectMaps(@Param("ew") Wrapper<T> queryWrapper);
+    List<Object> selectObjs(@Param("ew") Wrapper<T> queryWrapper);
+
+    
+    <P extends IPage<T>> P selectPage(P page, @Param("ew") Wrapper<T> queryWrapper);
+    <P extends IPage<Map<String, Object>>> P selectMapsPage(P page, @Param("ew") Wrapper<T> queryWrapper);
+}
+```
+
+```java
+@Data
+@TableName(value = "user")
+public class User {
+    @TableId( type = IdType.AUTO)
+    private Integer id;
+
+    private String name;
+
+    private Char sex;
+}
+
+@Repository
+public interface UserMapper extends BaseMapper<User> {
+}
+```
 
 
 
+##### 添加
+
+```java
+@SpringBootTest
+class CrudApplicationTests {
+
+    @Autowired
+    private UserMapper mapper;
+
+    @Test
+    void saveTest() {
+        User user = new User();
+        user.setId(6);
+        user.setName("haha");
+        user.setSex("女");
+        mapper.insert(user);
+    }
+}
+==>  Preparing: INSERT INTO user ( id, name, sex ) VALUES ( ?, ?, ? )
+==> Parameters: 6(Integer), haha(String), 女(String)
+<==    Updates: 1
+```
+
+
+
+##### 删除
+
+```java
+@SpringBootTest
+class CrudApplicationTests {
+
+    @Autowired
+    private UserMapper mapper;
+
+	@Test
+    void delTest1() {
+        mapper.deleteById(6);
+        // ==>  Preparing: DELETE FROM user WHERE id=?
+		// ==> Parameters: 6(Integer)
+    }
+    @Test
+    void delTest2() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("name", "ixfosa");
+        mapper.delete(wrapper);
+        // ==>  Preparing: DELETE FROM user WHERE (name = ?)
+		// ==> Parameters: ixfosa(String)
+    }
+
+    @Test
+    void delTest3() {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("id", 2);
+        mapper.deleteByMap(map);
+        // ==>  Preparing: DELETE FROM user WHERE id = ?
+		// ==> Parameters: 2(Integer)
+    }
+    
+    @Test
+    void delTest4() {
+        mapper.deleteBatchIds(Arrays.asList(1, 2, 3));
+        //     
+		// ==>  Preparing: DELETE FROM user WHERE id IN ( ? , ? , ? )
+		// ==> Parameters: 1(Integer), 2(Integer), 3(Integer)
+    }
+}
+```
+
+
+
+##### 更新
+
+```java
+@SpringBootTest
+class CrudApplicationTests {
+
+    @Autowired
+    private UserMapper mapper;
+
+    @Test
+    void updTest1() {
+        User user = mapper.selectById(5);
+        user.setSex("女");
+        mapper.updateById(user);
+        
+        /*
+        	==>  Preparing: SELECT id,name,sex FROM user WHERE id=?
+            ==> Parameters: 5(Integer)
+            <==    Columns: id, name, sex
+            <==        Row: 5, long, 0
+            
+            ==>  Preparing: UPDATE user SET name=?, sex=? WHERE id=?
+			==> Parameters: long(String), 女(String), 5(Integer)
+        */
+    }
+    
+    @Test
+    void updTest2() {
+        User user = new User();
+        user.setName("钟");
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("name", "龙");
+        mapper.update(user, wrapper);
+        // ==>  Preparing: UPDATE user SET name=? WHERE (name = ?)
+        // ==> Parameters: 钟(String), 龙(String)
+    }
+}
+
+```
+
+
+
+##### 查询
+
+```java
+@SpringBootTest
+class CrudApplicationTests {
+
+    @Autowired
+    private UserMapper mapper;
+	
+    @Test
+    void selectTest1() {
+        // ==>  Preparing: SELECT id,name,sex FROM user WHERE id=?
+        System.out.println(mapper.selectById(5));
+
+        // ==>  Preparing: SELECT id,name,sex FROM user WHERE (id = ?)
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("id", 5);
+        System.out.println(mapper.selectOne(wrapper));
+
+        // ==>  Preparing: SELECT id,name,sex FROM user WHERE id IN ( ? , ? , ? )
+        mapper.selectBatchIds(Arrays.asList(5, 6, 7)).forEach(System.out::println);
+    }
+ 	
+    @Test
+    void selectTest2() {
+        // ==>  Preparing: SELECT id,name,sex FROM user WHERE (id >= ? AND id < ?)
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.ge("id", 5);
+        wrapper.lt("id", 7);
+        mapper.selectList(wrapper).forEach(System.out::println);
+
+        // ==>  Preparing: SELECT id,name,sex FROM user WHERE id = ?
+        // User(id=5, name=long, sex=女)
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("id", 5);
+        mapper.selectByMap(map).forEach(System.out::println);
+        
+        // ==>  Preparing: SELECT id,name,sex FROM user WHERE (id >= ? AND id < ?)
+        // {sex=女, name=long, id=5}, ...
+        mapper.selectMaps(wrapper).forEach(System.out::println);
+    }
+	
+    @Test
+    void selectTest3() {
+        // ==>  Preparing: SELECT COUNT( * ) FROM user
+        System.out.println(mapper.selectCount(null));
+
+        // ==>  Preparing: SELECT id,name,sex FROM user WHERE (name = ? OR name = ?)
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("name", "芳");
+        wrapper.or();
+        wrapper.eq("name", "钟");
+        System.out.println(mapper.selectObjs(wrapper));
+    }
+    	
+    @Test
+    void selectTest4() {
+        // ==>  Preparing: SELECT id,name,sex FROM user
+        Page<User> page = new Page<>(1, 2);
+        Page<User> userPage = mapper.selectPage(page, null);
+        System.out.println(userPage.getRecords());
+    }
+}
+```
 
 
 
 #### 自定义SQL、多表关联
 
+```sql
+CREATE TABLE `product` (
+  `id` tinyint NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+```
 
+```java
+@Data
+public class ProductVO {
+    private String pname;
+    private Double price;
+    private Integer id;
+    private String uname;
+}
 
+@Repository
+public interface UserMapper extends BaseMapper<User> {
 
+    @Select("select p.name pname, p.price, u.name uname, u.id " +
+            "from product p, user u where p.user_id = u.id and u.id = #{id}")
+    List<ProductVO> productList(Integer id);
+}
+```
+
+```java
+@Test
+void test() {
+    // ==>  Preparing: select p.name pname, p.price, u.name uname, u.id
+    // from product p, user u where p.user_id = u.id and u.id = ?
+    mapper.productList(7).forEach(System.out::println);
+}
+```
 
 
 
 #### MyBatisPlus 自动生成
 
+````xml
 
+<dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-boot-starter</artifactId>
+    <version>3.4.3.1</version>
+</dependency>
+
+<!-- 添加 代码生成器 依赖-->
+<dependency>
+    <groupId>com.baomidou</groupId>
+    <artifactId>mybatis-plus-generator</artifactId>
+    <version>3.4.1</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+<!-- 模板引擎 依赖 Velocity（默认） -->
+<dependency>
+    <groupId>org.apache.velocity</groupId>
+    <artifactId>velocity-engine-core</artifactId>
+    <version>2.3</version>
+</dependency>
+````
+
+
+
+```java
+@Slf4j
+public class Main {
+    public static void main(String[] args) {
+        // 创建 generator 对象
+        AutoGenerator generator = new AutoGenerator();
+
+        // 数据源
+        DataSourceConfig dataSourceConfig = new DataSourceConfig();
+        dataSourceConfig.setDbType(DbType.MYSQL);
+        dataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
+        dataSourceConfig.setUrl("jdbc:mysql://127.0.0.1:3306/ssm?useUnicode=true&useSSL=false&characterEncoding=utf-8");
+        dataSourceConfig.setUsername("root");
+        dataSourceConfig.setPassword("ixfosa");
+        generator.setDataSource(dataSourceConfig);
+
+        // 全局配置
+        GlobalConfig globalConfig = new GlobalConfig();
+        // log.info(System.getProperty("user.dir"));
+        globalConfig.setOutputDir(System.getProperty("user.dir") + "/generator" +  "/src/main/java");
+        globalConfig.setOpen(false);
+        globalConfig.setAuthor("ixfosa");
+        globalConfig.setServiceName("%sService");
+        generator.setGlobalConfig(globalConfig);
+
+        // 包信息
+        PackageConfig packageConfig = new PackageConfig();
+        packageConfig.setParent("top.ixfosa");
+        // packageConfig.setModuleName("mybatisplus");
+        packageConfig.setController("controller");
+        packageConfig.setService("service");
+        packageConfig.setServiceImpl("service.impl");
+        packageConfig.setMapper("mapper");
+        packageConfig.setEntity("entity");
+        generator.setPackageInfo(packageConfig);
+
+        // 配置策略
+        StrategyConfig strategyConfig = new StrategyConfig();
+        strategyConfig.setEntityLombokModel(true);
+        strategyConfig.setNaming(NamingStrategy.underline_to_camel);
+        strategyConfig.setColumnNaming(NamingStrategy.underline_to_camel);
+        generator.setStrategy(strategyConfig);
+
+        generator.execute();
+    }
+}
+
+// http://localhost:8080/user/list
+```
+
+
+
+![mybatis-plus-generator](E:\notes\java-note\_media\generator.png)
 
 
 
