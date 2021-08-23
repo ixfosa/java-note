@@ -2964,6 +2964,51 @@ void versionTest() {
 
 ##### @TableLogic-逻辑删除
 
+```sql
+CREATE TABLE `user` (
+  `id` bigint NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `sex` tinyint(1) DEFAULT NULL,
+  `deleted` int DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+```
+
+```java
+@Data
+@TableName(value = "user")
+public class User {
+    @TableId( type = IdType.AUTO)
+    private Integer id;
+
+    private String name;
+
+    private SexEnum sex;
+
+    @TableLogic(value = "0", delval = "1")
+    private Integer deleted;
+}
+```
+
+
+
+```java
+@Test
+void tableLogicTest() {
+    mapper.deleteById(2);
+    System.out.println( mapper.selectById(1) );
+}
+
+==>  Preparing: UPDATE user SET deleted=1 WHERE id=? AND deleted=0
+==> Parameters: 2(Integer)
+<==    Updates: 1
+    
+==>  Preparing: SELECT id,name,sex,deleted FROM user WHERE id=? AND deleted=0
+==> Parameters: 1(Integer)
+<==      Total: 0
+null
+```
+
 
 
 
