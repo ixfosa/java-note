@@ -10,14 +10,14 @@
   + [Vue](http://js.ixfosa.top/#/notes/framework/vue)
   + [Nodejs]()
   
-* [Go]()
+* [Go](go.ixfosa.top)
   + [语法部分](https://go.ixfosa.top/#/notes/go)
   + [网络编程](https://go.ixfosa.top/#/notes/网络编程)
   + [并发编程](https://go.ixfosa.top/#/notes/并发编程)
   + [标准库](https://go.ixfosa.top/#/)
   + [Go Web](https://go.ixfosa.top/#/)
 
-* [Python](py,ixfosa.top)
+* [Python](py.ixfosa.top)
   + [语法部分](http://localhost:3000/#/notes/python)
   
 * [Database](https://db.ixfosa.top/)
