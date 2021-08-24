@@ -10,7 +10,9 @@
   + [Nodejs]()
 * [Go]()
 * [Python]()
-* [Database]()
-  + [MySQL]()
+* [Database](https://db.ixfosa.top/)
+  + [MySQL](https://db.ixfosa.top/)
+  + [Redis](https://db.ixfosa.top/#/notes/Redis)
+  + [MongoDB](https://db.ixfosa.top/#/notes/MongoDB)
 * [Linux](https://linux.ixfosa.top)
 
