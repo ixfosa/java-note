@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch01-springboot-hello/ch01-springboot-hello.iml" filepath="$PROJECT_DIR$/ch01-springboot-hello/ch01-springboot-hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch02-springboot-servlet/ch02-springboot-servlet.iml" filepath="$PROJECT_DIR$/ch02-springboot-servlet/ch02-springboot-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch03-springboot-filter/ch03-springboot-filter.iml" filepath="$PROJECT_DIR$/ch03-springboot-filter/ch03-springboot-filter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch04-springboot-listener/ch04-springboot-listener.iml" filepath="$PROJECT_DIR$/ch04-springboot-listener/ch04-springboot-listener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch05-springboot-static-resources/ch05-springboot-static-resources.iml" filepath="$PROJECT_DIR$/ch05-springboot-static-resources/ch05-springboot-static-resources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch07-springboot-jsp/ch07-springboot-jsp.iml" filepath="$PROJECT_DIR$/ch07-springboot-jsp/ch07-springboot-jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch08-springboot-freemarker/ch08-springboot-freemarker.iml" filepath="$PROJECT_DIR$/ch08-springboot-freemarker/ch08-springboot-freemarker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch09-springboot-thymeleaf/ch09-springboot-thymeleaf.iml" filepath="$PROJECT_DIR$/ch09-springboot-thymeleaf/ch09-springboot-thymeleaf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch10-springboot-mybatis/ch10-springboot-mybatis.iml" filepath="$PROJECT_DIR$/ch10-springboot-mybatis/ch10-springboot-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch11-springboot-jpa/ch11-springboot-jpa.iml" filepath="$PROJECT_DIR$/ch11-springboot-jpa/ch11-springboot-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch12-springboot-validata/ch12-springboot-validata.iml" filepath="$PROJECT_DIR$/ch12-springboot-validata/ch12-springboot-validata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch13-springboot-exception/ch13-springboot-exception.iml" filepath="$PROJECT_DIR$/ch13-springboot-exception/ch13-springboot-exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch14-springboot-test/ch14-springboot-test.iml" filepath="$PROJECT_DIR$/ch14-springboot-test/ch14-springboot-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch15-springboot-devtools/ch15-springboot-devtools.iml" filepath="$PROJECT_DIR$/ch15-springboot-devtools/ch15-springboot-devtools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch16-springboot-ehcache/ch16-springboot-ehcache.iml" filepath="$PROJECT_DIR$/ch16-springboot-ehcache/ch16-springboot-ehcache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch17-springboot-redis/ch17-springboot-redis.iml" filepath="$PROJECT_DIR$/ch17-springboot-redis/ch17-springboot-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch18-springboot-scheduled/ch18-springboot-scheduled.iml" filepath="$PROJECT_DIR$/ch18-springboot-scheduled/ch18-springboot-scheduled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch19-quartz/ch19-quartz.iml" filepath="$PROJECT_DIR$/ch19-quartz/ch19-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch20-springboot-quartz/ch20-springboot-quartz.iml" filepath="$PROJECT_DIR$/ch20-springboot-quartz/ch20-springboot-quartz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch21-springboot-jwt/ch21-springboot-jwt.iml" filepath="$PROJECT_DIR$/ch21-springboot-jwt/ch21-springboot-jwt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+    </modules>
+  </component>
+</project>

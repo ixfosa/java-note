@@ -1,0 +1,17 @@
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ssm?useUnicode=true&useSSL=false&characterEncoding=utf-8
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: ixfosa
+mybatis-plus:
+  configuration:
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+    # 配置枚举包
+    # type-enums-package: top.ixfosa.enums
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler

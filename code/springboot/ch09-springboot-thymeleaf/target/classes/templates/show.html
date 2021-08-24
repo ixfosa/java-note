@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+    <span th:text = 'Hello'></span>
+    <hr>
+    <span th:text="${msg}"></span>
+    <hr>
+    <span th:text="${user.name}"></span><br>
+    <span th:text="'Hello&nbsp;' + ${user.name}"></span>
+    <hr>
+    <input th:value="${user.name}">
+    <hr>
+    HttpServletRequest: <span th:text="${#httpServletRequest.getAttribute('req')}"></span>
+    <hr>
+    HttpSession: <span th:text="${session.sess}"></span>
+    <hr>
+    Application: <span th:text="${application.app}"></span>
+    <hr>
+    <a th:href="@{http://www.baidu.com}">绝对路径</a><br>
+    <a th:href="@{/show}">相对路径</a>
+    <hr>
+    <a th:href="@{/param(id=3, name=ixfosa)}">相对路径-传参</a><br>
+    <a th:href="@{/restful/{id}/{name}(id=6, name=zhong)}">相对路径-传参-restful</a>
+</body>
+</html>

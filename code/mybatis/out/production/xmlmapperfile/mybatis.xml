@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- default 引用 environment 的 id,当前所使用的环境 -->
+    <environments default="defaule">
+        <environment id="defaule">
+            <!-- 使用原生 JDBC 事务 -->
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <!-- MySQL数据库驱动 -->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm?useUnicode=true&amp;characterEncoding=utf8" />
+                <property name="username" value="root"/>
+                <property name="password" value="ixfosa"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="select/mapper/FlowerMapper.xml" />
+        <mapper resource="insert/mapper/FlowerMapper.xml" />
+        <mapper resource="update/mapper/FlowerMapper.xml" />
+        <mapper resource="delete/mapper/FlowerMapper.xml" />
+        <mapper resource="sqlsnippet/mapper/FlowerMapper.xml" />
+        <mapper resource="resultmap/mapper/FlowerMapper.xml"/>
+        <mapper resource="resultmap/mapper/UserMapper.xml"/>
+    </mappers>
+</configuration>

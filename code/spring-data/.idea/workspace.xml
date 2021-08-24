@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2ce3c6c7-95a5-4326-8d78-5f7ce9177965" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\software\maven\repository" />
+        <option name="mavenHome" value="D:/software/maven/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="D:\software\maven\apache-maven-3.8.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1sySgD934FnDD0mqjpMEhBXFA2p" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ch9-springdata-redis/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.30689654" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\IdeaProjects\spring-data\ch9-springdata-redis\lib" />
+      <recent name="D:\code\IdeaProjects\spring-data\ch8-springdata-spring-mapping\src\top\ixfosa\dao\many2many" />
+      <recent name="D:\code\IdeaProjects\spring-data\ch8-springdata-spring-mapping\src\top\ixfosa\dao\one2many" />
+      <recent name="D:\code\IdeaProjects\spring-data\ch8-springdata-spring-mapping\src\top\ixfosa\pojo\many2many" />
+      <recent name="D:\code\IdeaProjects\spring-data\ch8-springdata-spring-mapping\src\top\ixfosa\pojo\one2many" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.ixfosa.dao" />
+      <recent name="top.ixfosa.test" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="top.ixfosa.dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AppTest.testReadJSON">
+    <configuration name="AppTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch9-springdata-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa.test" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.test.AppTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testReadJSON" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch9-springdata-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa.test" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.test.AppTest" />
+      <option name="METHOD_NAME" value="testReadJSON" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testReadObj" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch9-springdata-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa.test" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.test.AppTest" />
+      <option name="METHOD_NAME" value="testReadObj" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testSaveJSON" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch9-springdata-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa.test" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.test.AppTest" />
+      <option name="METHOD_NAME" value="testSaveJSON" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppTest.testSaveObj" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ch9-springdata-redis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa.test" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.test.AppTest" />
+      <option name="METHOD_NAME" value="testSaveObj" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AppTest.testReadJSON" />
+        <item itemvalue="JUnit.AppTest.testSaveJSON" />
+        <item itemvalue="JUnit.AppTest.testReadObj" />
+        <item itemvalue="JUnit.AppTest.testSaveObj" />
+        <item itemvalue="JUnit.AppTest.test2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS,SHOW_NON_PUBLIC,SHOW_INHERITED,SHOW_INTERFACES" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ce3c6c7-95a5-4326-8d78-5f7ce9177965" name="Default Changelist" comment="" />
+      <created>1621843445278</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621843445278</updated>
+      <workItem from="1621843448794" duration="384000" />
+      <workItem from="1621843854065" duration="375000" />
+      <workItem from="1621844243090" duration="8608000" />
+      <workItem from="1621856029472" duration="5301000" />
+      <workItem from="1621908462555" duration="20117000" />
+      <workItem from="1622081688723" duration="11129000" />
+      <workItem from="1622100579791" duration="15999000" />
+      <workItem from="1622167969418" duration="4386000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="43" key="#Notifications" timestamp="1621844009267">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="233" y="43" key="#Notifications/0.0.1280.770@0.0.1280.770" timestamp="1621844009267" />
+    <state x="233" y="43" key="#Project_Structure" timestamp="1622170466456">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="233" y="43" key="#Project_Structure/0.0.1280.770@0.0.1280.770" timestamp="1622170466456" />
+    <state x="362" y="179" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622170620706">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="362" y="179" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.770@0.0.1280.770" timestamp="1622170620706" />
+    <state x="446" y="88" key="#com.intellij.ide.util.MemberChooser" timestamp="1622172582647">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="446" y="88" key="#com.intellij.ide.util.MemberChooser/0.0.1280.770@0.0.1280.770" timestamp="1622172582647" />
+    <state x="241" y="301" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1622120095198">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="241" y="301" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.770@0.0.1280.770" timestamp="1622120095198" />
+    <state x="93" y="93" width="1093" height="583" key="DiffContextDialog" timestamp="1621944633294">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="93" y="93" width="1093" height="583" key="DiffContextDialog/0.0.1280.770@0.0.1280.770" timestamp="1621944633294" />
+    <state x="422" y="140" key="FileChooserDialogImpl" timestamp="1622170384020">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="422" y="140" key="FileChooserDialogImpl/0.0.1280.770@0.0.1280.770" timestamp="1622170384020" />
+    <state width="1238" height="42" key="GridCell.Tab.0.bottom" timestamp="1622179880324">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="42" key="GridCell.Tab.0.bottom/0.0.1280.770@0.0.1280.770" timestamp="1622179880324" />
+    <state width="1238" height="42" key="GridCell.Tab.0.center" timestamp="1622179880323">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="42" key="GridCell.Tab.0.center/0.0.1280.770@0.0.1280.770" timestamp="1622179880323" />
+    <state width="1238" height="42" key="GridCell.Tab.0.left" timestamp="1622179880323">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="42" key="GridCell.Tab.0.left/0.0.1280.770@0.0.1280.770" timestamp="1622179880323" />
+    <state width="1238" height="42" key="GridCell.Tab.0.right" timestamp="1622179880323">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="42" key="GridCell.Tab.0.right/0.0.1280.770@0.0.1280.770" timestamp="1622179880323" />
+    <state width="1238" height="94" key="GridCell.Tab.1.bottom" timestamp="1622120927190">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="94" key="GridCell.Tab.1.bottom/0.0.1280.770@0.0.1280.770" timestamp="1622120927190" />
+    <state width="1238" height="94" key="GridCell.Tab.1.center" timestamp="1622120927190">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="94" key="GridCell.Tab.1.center/0.0.1280.770@0.0.1280.770" timestamp="1622120927190" />
+    <state width="1238" height="94" key="GridCell.Tab.1.left" timestamp="1622120927190">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="94" key="GridCell.Tab.1.left/0.0.1280.770@0.0.1280.770" timestamp="1622120927190" />
+    <state width="1238" height="94" key="GridCell.Tab.1.right" timestamp="1622120927190">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="94" key="GridCell.Tab.1.right/0.0.1280.770@0.0.1280.770" timestamp="1622120927190" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1622171539318">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.770@0.0.1280.770" timestamp="1622171539318" />
+    <state x="339" y="278" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1622171364422">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="339" y="278" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.770@0.0.1280.770" timestamp="1622171364422" />
+    <state x="14" y="0" key="new project wizard" timestamp="1622120851596">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="14" y="0" key="new project wizard/0.0.1280.770@0.0.1280.770" timestamp="1622120851596" />
+    <state x="299" y="40" width="670" height="676" key="search.everywhere.popup" timestamp="1621945262072">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="299" y="40" width="670" height="676" key="search.everywhere.popup/0.0.1280.770@0.0.1280.770" timestamp="1621945262072" />
+    <state x="322" y="0" key="spring file set editor" timestamp="1622170472833">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="322" y="0" key="spring file set editor/0.0.1280.770@0.0.1280.770" timestamp="1622170472833" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ch7-springdata-jpa-spring/src/top/ixfosa/test/UserDaoTest.java</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

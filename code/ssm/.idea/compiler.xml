@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-mybatis" />
+        <module name="spring-trans-anno" />
+        <module name="mybatis-dynamic-sql" />
+        <module name="mybatis-return-result" />
+        <module name="springmvc-receive-param" />
+        <module name="springmvc-hello" />
+        <module name="springmvc-websocket" />
+        <module name="springmvc-requestmapping" />
+        <module name="mybatis-hello" />
+        <module name="springmvc-exception-handler" />
+        <module name="springmvc-return" />
+        <module name="springmvc-interceptor" />
+        <module name="spring-aop-leadin" />
+        <module name="spring-di-anno" />
+        <module name="spring-web" />
+        <module name="mybatis-dao" />
+        <module name="spring-trans" />
+        <module name="spring-hello" />
+        <module name="springmvc-path" />
+        <module name="springmvc-spring-mybatis" />
+        <module name="spring-di-xml" />
+        <module name="springmvc-file-upload" />
+        <module name="mybatis-parameter" />
+        <module name="springmvc-url-pattern" />
+        <module name="spring-trans-aspectj" />
+        <module name="mybatis-proxy-dao" />
+        <module name="servlet-websocket" />
+        <module name="springmvc-interceptor-permission" />
+        <module name="springmvc-forward-redirect" />
+        <module name="spring-aop-aspectj" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+</project>

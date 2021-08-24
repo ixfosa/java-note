@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sqlsnippet.mapper.FlowerMapper">
+
+<sql id="flowerColumns">
+        name, price, production
+    </sql>
+
+<select id="selAll" resultType="bean.Flower">
+    select <include refid="flowerColumns" /> from flower
+</select>
+
+</mapper>

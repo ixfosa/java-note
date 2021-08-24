@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/servlet-websocket" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-web" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-exception-handler" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-file-upload" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-forward-redirect" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-hello" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-interceptor" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-interceptor-permission" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-path" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-receive-param" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-requestmapping" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-return" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-spring-mybatis" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-url-pattern" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc-websocket" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/springmvc-websocket/src/main/webapp/index.jsp" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

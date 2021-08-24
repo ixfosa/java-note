@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        td {  text-align: center; }
+    </style>
+</head>
+<body>
+    <table border="1" cellspacing="0" align="center" width="400">
+        <tr>
+            <th>id</th>
+            <td>name</td>
+            <td>age</td>
+            <td>del</td>
+            <td>upd</td>
+        </tr>
+        <tr th:each="user : ${list}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.age}"></td>
+            <td><a th:href="@{/delu/{id}(id=${user.id})}">del</a></td>
+            <td><a th:href="@{/findu/{id}(id=${user.id})}">upd</a></td>
+        </tr>
+        <tr align="center">
+            <td colspan="5"><a th:href="@{/add}">add</a> </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 加载配置文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties" />
+
+    <!-- 自动扫描注解 -->
+    <context:component-scan base-package="com.ixfosa" />
+
+    <!-- 配置数据源，使用阿里巴巴 druid 连接池 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="maxActive" value="${jdbc.maxActive}" />
+    </bean>
+
+    <!-- 配置 sqlSessioonFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- 加载 mybatis配置文件 -->
+        <property name="configLocation" value="classpath:mybatis-cfg.xml" />
+    </bean>
+
+    <!-- 自动生成dao实现类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <property name="basePackage" value="com.ixfosa.dao" />
+    </bean>
+
+    <!-- 使用cglib动态代理 -->
+    <aop:config proxy-target-class="true" />
+
+    <!--声明式事务处理：和源代码完全分离的-->
+    <!--1.声明事务管理器对象-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <tx:advice id="myAdvice" transaction-manager="txManager">
+        <!--tx:attributes：配置事务属性-->
+        <tx:attributes>
+            <!--tx:method：给具体的方法配置事务属性，method可以有多个，分别给不同的方法设置事务属性
+               name:方法名称，1）完整的方法名称，不带有包和类。
+                             2）方法可以使用通配符,* 表示任意字符
+               propagation：传播行为，枚举值
+               isolation：隔离级别
+               rollback-for：你指定的异常类名，全限定类名。 发生异常一定回滚
+               read-only: true | false 用于设置该方法对数据库的操作是否是只读的。
+           -->
+            <tx:method name="buy" propagation="REQUIRED" isolation="DEFAULT"
+                read-only="false"
+                rollback-for="java.lang.NullPointerException,
+                              com.ixfosa.ex.NotEnoughException"/>
+
+
+            <!-- 使用通配符，指定很多的方法 -->
+            <!-- 指定新增方法 -->
+            <tx:method name="insert*" />
+            <!-- 指定修改方法 -->
+            <tx:method name="update*" />
+            <!-- 删除方法 -->
+            <tx:method name="delete*" />
+
+            <!--查询方法，query，search，find-->
+            <tx:method name="*" propagation="SUPPORTS" read-only="true" />
+        </tx:attributes>
+    </tx:advice>
+
+    <!--配置aop-->
+    <aop:config>
+        <!--配置切入点表达式：指定哪些包中类，要使用事务
+           id:切入点表达式的名称，唯一值
+           expression：切入点表达式，指定哪些类要使用事务，aspectj会创建代理对象
+           com.ixfosa.service
+       -->
+        <aop:pointcut id="servicePt" expression="execution(* *..service..*.*(..))"/>
+        <!--
+        配置增强器：关联adivce和pointcut
+               advice-ref:通知，上面tx:advice哪里的配置
+               pointcut-ref：切入点表达式的id
+        -->
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="servicePt" />
+    </aop:config>
+</beans>

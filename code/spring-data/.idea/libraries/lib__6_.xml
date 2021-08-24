@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib (6)">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/ch5-springdata-hibernate-jpa/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/ch5-springdata-hibernate-jpa/lib" recursive="false" />
+  </library>
+</component>

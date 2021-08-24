@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.ixfosa.dao.UserDao">
+    <insert id="add" parameterType="user">
+        insert into user(id, name, age)
+        values
+        (default , #{name}, #{age});
+    </insert>
+
+    <select id="sel" resultType="user">
+        select * from user
+    </select>
+
+    <delete id="del">
+        delete from user where id = #{id}
+    </delete>
+
+    <update id="upd">
+        update user set name = #{name}, age = #{age} where id = #{id}
+    </update>
+
+    <select id="selById" resultType="user">
+        select * from user where id = #{id}
+    </select>
+</mapper>

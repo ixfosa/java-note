@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置读取properties文件的工具类 -->
+    <context:property-placeholder location="classpath:redis.properties" />
+
+    <!-- Jedis连接池 -->
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.pool.maxIdle}" />
+        <property name="maxTotal" value="${redis.pool.maxtTotal}" />
+        <property name="minIdle" value="${redis.pool.minIdle}" />
+    </bean>
+
+    <!-- Jedis连接工厂:创建Jedis对象的工厂 -->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <!-- IP地址 -->
+        <property name="hostName" value="${redis.hostname}" />
+        <!-- 端口 -->
+        <property name="port" value="${redis.port}" />
+        <!-- 连接池 -->
+        <property name="poolConfig" ref="poolConfig" />
+    </bean>
+
+    <!-- Redis模板对象:是SpringDataRedis提供的用户操作Redis的对象 -->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory" />
+
+        <!-- 默认的序列化器：序列化器就是根据规则将存储的数据中的key与value做字符串的序列化处理 -->
+        <!-- keySerializer、valueSerializer：对应的是Redis中的String类型 -->
+        <!-- hashKeySerializer、hashValueSerializer：对应的是Redis中的Hash类型 -->
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch1-springdata-hibernate/ch1-springdata-hibernate.iml" filepath="$PROJECT_DIR$/ch1-springdata-hibernate/ch1-springdata-hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch2-springdata-hibernate-HQL/ch2-springdata-hibernate-HQL.iml" filepath="$PROJECT_DIR$/ch2-springdata-hibernate-HQL/ch2-springdata-hibernate-HQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch3-springdata-hibernate-SQL/ch3-springdata-hibernate-SQL.iml" filepath="$PROJECT_DIR$/ch3-springdata-hibernate-SQL/ch3-springdata-hibernate-SQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch4-springdata-hibernate-QBC/ch4-springdata-hibernate-QBC.iml" filepath="$PROJECT_DIR$/ch4-springdata-hibernate-QBC/ch4-springdata-hibernate-QBC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch5-springdata-hibernate-jpa/ch5-springdata-hibernate-jpa.iml" filepath="$PROJECT_DIR$/ch5-springdata-hibernate-jpa/ch5-springdata-hibernate-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch6-springdata-jpa/ch6-springdata-jpa.iml" filepath="$PROJECT_DIR$/ch6-springdata-jpa/ch6-springdata-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch7-springdata-jpa-spring/ch7-springdata-jpa-spring.iml" filepath="$PROJECT_DIR$/ch7-springdata-jpa-spring/ch7-springdata-jpa-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch8-springdata-spring-mapping/ch8-springdata-spring-mapping.iml" filepath="$PROJECT_DIR$/ch8-springdata-spring-mapping/ch8-springdata-spring-mapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch9-springdata-redis/ch9-springdata-redis.iml" filepath="$PROJECT_DIR$/ch9-springdata-redis/ch9-springdata-redis.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- EnumOrdinalTypeHandler -->
+
+<mapper namespace="typehandler.mapper.UserMapper">
+    <!-- EnumOrdinalTypeHandler -->
+    <resultMap id="userMap"  type="user">
+        <id property="id" column="id" />
+        <result property="name" column="id" />
+        <result property="age" column="age" />
+        <result property="sex" column="sex" typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
+    </resultMap>
+
+    <!-- EnumTypeHandler -->
+    <resultMap id="userMap2"  type="user">
+        <id property="id" column="id" />
+        <result property="name" column="id" />
+        <result property="age" column="age" />
+        <result property="sex" column="sex" typeHandler="org.apache.ibatis.type.EnumTypeHandler" />
+    </resultMap>
+
+
+    <!-- 自定义枚举 TypeHandler -->
+    <resultMap id="userMap3"  type="user">
+        <id property="id" column="id" />
+        <result property="name" column="id" />
+        <result property="age" column="age" />
+        <result property="sex" column="sex" typeHandler="typehandler.po.SexEnumTypeHandler" />
+    </resultMap>
+
+    <select id="getUser" resultMap="userMap" parameterType="long">
+        select id, name, age, sex from myuser where id=#{id}
+    </select>
+
+    <select id="getUser2" resultMap="userMap2" parameterType="long">
+        select id, name, age, sex from myuser where id=#{id}
+    </select>
+
+    <select id="getUser3" resultMap="userMap3" parameterType="long">
+        select id, name, age, sex from myuser where id=#{id}
+    </select>
+</mapper>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.FlowerDao">
+    <sql id="flowerID">
+            id, name, price, production
+    </sql>
+
+    <!-- if -->
+    <select id="findFlower" parameterType="flower" resultType="flower">
+        select * from flower where 1=1
+        <if test="id != null and id != ''">
+            and id=#{id}
+        </if>
+        <if test="name != null and name != ''">
+            and name=#{name}
+        </if>
+        <if test="price != null and price != ''">
+            and price=#{price}
+        </if>
+        <if test="production != null and production != ''">
+            and production=#{production}
+        </if>
+    </select>
+
+    <!-- choose, when, otherwise -->
+    <select id="findFlowerByChoose" resultType="flower" parameterType="flower">
+        select * from flower where 1=1
+        <choose>
+            <when test="name != null and name != ''">
+                and name like concat('%',#{name},'%')
+            </when>
+            <when test="production != null and production != ''">
+                and production like concat('%', #{production}, '%')
+            </when>
+
+            <when test="price != null and price != ''">
+                and price > 66.0
+            </when>
+
+           <otherwise>
+               id > 1
+           </otherwise>
+
+        </choose>
+    </select>
+
+    <!--where的使用-->
+    <select id="findFlowerByWhere" parameterType="flower" resultType="flower">
+        select * from flower
+        <where>
+            <if test="id != null and id != ''">
+                and id=#{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name=#{name}
+            </if>
+            <if test="price != null and price != ''">
+                and price=#{price}
+            </if>
+            <if test="production != null and production != ''">
+                and production=#{production}
+            </if>
+        </where>
+    </select>
+
+    <!-- set的使用，更新flower -->
+    <update id="updateFlowerBySet" parameterType="flower">
+        update flower
+        <set>
+            id=#{id},
+            <if test="name != null and name != ''">
+                name=#{name},
+            </if>
+            <if test="price != null and price != ''">
+                price=#{price},
+            </if>
+            <if test="production != null and production != ''">
+                production=#{production},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="findFlowerByTrim" resultType="flower" parameterType="flower">
+        select * from flower
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="id != null and id != ''">
+                and id=#{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name=#{name}
+            </if>
+            <if test="price != null and price != ''">
+                and price=#{price}
+            </if>
+            <if test="production != null and production != ''">
+                and production=#{production}
+            </if>
+        </trim>
+    </select>
+
+    <select id="findFlowerByBind" parameterType="flower" resultType="flower">
+        <bind name="production" value="'%'+production+'%'" />
+            select * from flower where production like #{production}
+    </select>
+
+    <select id="findFlowerByForeach" resultType="flower" parameterType="list">
+        select * from flower where id in
+        <foreach collection="list" item="item" index="idx" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertFlwoer" parameterType="flower">
+        insert into flower values
+        <trim suffixOverrides=",">
+            <foreach collection="list" item="flower">
+                (default, #{flower.name}, #{flower.price}, #{flower.production}),
+            </foreach>
+        </trim>
+    </insert>
+</mapper>

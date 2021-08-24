@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--<bean id="school" class="com.ixfosa.demo5.School">
+        <property name="name" value="江工" />
+        <property name="address" value="西湖区" />
+    </bean>-->
+    <bean id="primarySchool" class="com.ixfosa.demo5.PrimarySchool">
+        <property name="name" value="江工" />
+        <property name="address" value="西湖区" />
+    </bean>
+
+    <!--注意：在byType中， 在xml配置文件中声明bean只能有一个符合条件的，
+              多余一个是错误的
+    -->
+    <bean id="student" class="com.ixfosa.demo5.Student" autowire="byType">
+        <property name="name" value="zhong" />
+        <property name="age" value="21" />
+    </bean>
+
+</beans>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+ namespace：必须有值，自定义的唯一字符串
+ 推荐使用：dao 接口的全限定名称
+-->
+<mapper namespace="com.ixfosa.dao.StudentDao">
+    <select id="selectStudentReturnViewStudent" resultType="viewStudent">
+        select id, name from student where id = #{sid};
+    </select>
+
+    <!--sql执行后返回一行一列-->
+    <select id="countStudent" resultType="int">
+        select count(id) from student;
+    </select>
+
+    <!--返回Map
+        1）列名是map的key， 列值是map的value
+        2)只能最多返回一行记录。多余一行是错误
+    -->
+    <select id="selectMapById" resultType="java.util.HashMap">
+        select * from student where id = #{id}
+    </select>
+
+    <!-- auto mapping，java类a属性名和数据库中的字段名一致 可以不手动映射 -->
+    <select id="selectAllStudents" resultType="student">
+        select * from student
+    </select>
+
+    <!--
+        使用resultMap
+            1)先定义resultMap
+            2)在select标签，使用resultMap来引用1定义的。
+        
+        定义resultMap
+            id:自定义名称，表示你定义的这个resultMap
+            type：java类型的全限定名称
+            
+        当Java实体属性名和数据库字段名不一致使 可以定义 resultMap，
+        auto mapping 和 resultMap 可混合使用
+    -->
+    <resultMap id="myStudentMap" type="myStudent">
+        <!--列名和java属性的关系-->
+        <!-- 主键使用 id -->
+        <id property="stuid" column="id" />
+        <!--非主键列，使用result-->
+        <result property="stuname" column="name" />
+        <result property="stuemail" column="email" />
+        <!-- Student类age属性名 和 数据库中的age字段名一致 可以不手动映射 -->
+    </resultMap>
+
+    <!--列名和属性名不一样:第一种方式-->
+    <select id="selectMyStudent" resultMap="myStudentMap">
+         select * from student
+    </select>
+
+    <!--列名和属性名不一样：第二种方式
+       resultType的默认原则是 同名的列值赋值给同名的属性， 使用列别名(java对象的属性名)
+    -->
+    <select id="selectDiffColProperty" resultType="myStudent">
+        select id as stuid, name as stuname, email as stuemail, age
+        from student
+    </select>
+
+    <!--第一种 like ， java代码指定 like的内容-->
+    <select id="selectLikeOne" resultType="student">
+        select * from student where email like #{email};
+    </select>
+
+    <select id="selectLikeTwo" resultType="student">
+        select * from student where email like "%" #{email} "%";
+    </select>
+</mapper>
+

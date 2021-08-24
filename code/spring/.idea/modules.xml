@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IoC/IoC.iml" filepath="$PROJECT_DIR$/IoC/IoC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aop/aop.iml" filepath="$PROJECT_DIR$/aop/aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loadprop/loadprop.iml" filepath="$PROJECT_DIR$/loadprop/loadprop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proxy/proxy.iml" filepath="$PROJECT_DIR$/proxy/proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sm/sm.iml" filepath="$PROJECT_DIR$/sm/sm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tx/tx.iml" filepath="$PROJECT_DIR$/tx/tx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tx-annotation/tx-annotation.iml" filepath="$PROJECT_DIR$/tx-annotation/tx-annotation.iml" />
+    </modules>
+  </component>
+</project>

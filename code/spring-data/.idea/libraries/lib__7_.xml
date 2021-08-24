@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib (7)">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/ch6-springdata-jpa/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/ch6-springdata-jpa/lib" recursive="false" />
+  </library>
+</component>

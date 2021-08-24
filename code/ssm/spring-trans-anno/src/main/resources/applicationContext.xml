@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--
+       把数据库的配置信息，写在一个独立的文件，编译修改数据库的配置内容
+       spring知道jdbc.properties文件的位置
+    -->
+    <context:property-placeholder location="classpath:jdbc.properties" />
+
+
+    <!-- 注解自动扫描 -->
+    <context:component-scan base-package="com.ixfosa" />
+
+    <!-- 声明数据源DataSource, 作用是连接数据库的 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="maxActive" value="${jdbc.maxActive}" />
+    </bean>
+
+    <!--
+       声明的是mybatis中提供的SqlSessionFactoryBean类，这个类内部创建SqlSessionFactory的
+       SqlSessionFactory  sqlSessionFactory = new ..
+   -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!--
+            mybatis主配置文件的位置
+            configLocation属性是Resource类型，读取配置文件
+            它的赋值，使用value，指定文件的路径，使用classpath:表示文件的位置
+        -->
+        <property name="configLocation" value="classpath:mybatis-cfg.xml" />
+    </bean>
+
+    <!--
+        创建dao对象，使用SqlSession的getMapper（StudentDao.class）
+        MapperScannerConfigurer:在内部调用getMapper()生成每个dao接口的代理对象。
+    -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--指定SqlSessionFactory对象的id-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+
+        <!--
+           指定包名， 包名是dao接口所在的包名。
+           MapperScannerConfigurer会扫描这个包中的所有接口，把每个接口都执行
+           一次getMapper()方法，得到每个接口的dao对象。
+           创建好的dao对象放入到spring的容器中的。 dao对象的默认名称是 接口名首字母小写
+       -->
+        <property name="basePackage" value="com.ixfosa.dao" />
+    </bean>
+
+    <!--使用spring的事务处理-->
+    <!--1. 声明事务管理器-->
+    <bean id="tx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--连接的数据库， 指定数据源-->
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--2. 开启事务注解驱动，告诉spring使用注解管理事务，创建代理对象
+           transaction-manager:事务管理器对象的id
+    -->
+    <tx:annotation-driven transaction-manager="tx"/>
+
+    <!--
+        该属性值默认为false,表示使用JDK动态代理织入增强;
+        当值为true时,表示使用CGLib动态代理织入增强;
+        但是,即使设置为false,如果目标类没有生命接口,则Spring将自动使用CGLib动态代理.-->
+    <aop:config proxy-target-class="true" />
+</beans>

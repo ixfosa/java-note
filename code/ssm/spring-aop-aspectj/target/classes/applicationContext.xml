@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.ixfosa" />
+
+    <!--声明自动代理生成器：使用aspectj框架内部的功能，创建目标对象的代理对象。
+        创建代理对象是在内存中实现的， 修改目标对象的内存中的结构。 创建为代理对象
+        所以目标对象就是被修改后的代理对象.
+
+        aspectj-autoproxy:会把spring容器中的所有的目标对象，一次性都生成代理对象。
+    -->
+    <!--<aop:aspectj-autoproxy />-->
+
+    <!--
+       如果你期望目标类有接口，使用cglib代理
+       proxy-target-class="true":告诉框架，要使用cglib动态代理
+    -->
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+</beans>

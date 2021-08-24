@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+ namespace：必须有值，自定义的唯一字符串
+ 推荐使用：dao 接口的全限定名称
+-->
+<mapper namespace="com.ixfosa.dao.StudentDao">
+    <!--
+       select:表示查询操作。
+       id: 你要执行的sql语法的唯一标识， mybatis会使用这个id的值来找到要执行的sql语句
+           可以自定义，但是要求你使用接口中的方法名称。
+       resultType:表示结果类型的， 是sql语句执行后得到ResultSet,遍历这个ResultSet得到java对象的类型。
+          值写的类型的全限定名称
+    -->
+    <select id="selectStudents" resultType="student">
+        select id, name, email, age from student order by id
+    </select>
+
+    <insert id="insertStudent" parameterType="student">
+        insert into student values (default , #{name}, #{email}, #{age})
+    </insert>
+</mapper>

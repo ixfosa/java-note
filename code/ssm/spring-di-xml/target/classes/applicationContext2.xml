@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="school" class="com.ixfosa.demo2.School">
+        <property name="name" value="家里蹲" />
+        <property name="address" value="火星" />
+    </bean>
+
+    <bean name="student" class="com.ixfosa.demo2.Student">
+        <property name="name" value="ixfosa" />
+        <property name="age" value="23" />
+        <property name="school" ref="school" />
+    </bean>
+</beans>

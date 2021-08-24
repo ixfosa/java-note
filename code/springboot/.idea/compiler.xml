@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ch15-springboot-SpringLoader" />
+        <module name="ch05-springboot-static-resources" />
+        <module name="ch01-springboot-hello" />
+        <module name="ch21-springboot-jwt" />
+        <module name="ch02-springboot-servlet" />
+        <module name="ch08-springboot-freemarker" />
+        <module name="ch04-springboot-listener" />
+        <module name="ch07-springboot-jsp" />
+        <module name="ch20-springboot-quartz" />
+        <module name="test" />
+        <module name="ch17-springboot-redis" />
+        <module name="ch12-springboot-validata" />
+        <module name="ch16-springboot-ehcache" />
+        <module name="ch15-springboot-devtools" />
+        <module name="ch09-springboot-thymeleaf" />
+        <module name="ch19-quartz" />
+        <module name="ch11-springboot-jpa" />
+        <module name="ch03-springboot-filter" />
+        <module name="ch14-springboot-test" />
+        <module name="ch18-springboot-scheduled" />
+        <module name="ch10-springboot-mybatis" />
+        <module name="ch13-springboot-exception" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="ch01-springboot-hello" target="1.8" />
+      <module name="ch02-springboot-servlet" target="1.8" />
+      <module name="ch03-springboot-filter" target="1.8" />
+      <module name="ch04-springboot-listener" target="1.8" />
+      <module name="ch05-springboot-static-resources" target="1.8" />
+      <module name="ch07-springboot-jsp" target="1.8" />
+      <module name="ch08-springboot-freemarker" target="1.8" />
+      <module name="ch09-springboot-thymeleaf" target="1.8" />
+      <module name="ch10-springboot-mybatis" target="1.8" />
+      <module name="ch11-springboot-jpa" target="1.8" />
+      <module name="ch12-springboot-validata" target="1.8" />
+      <module name="ch13-springboot-exception" target="1.8" />
+      <module name="ch14-springboot-test" target="1.8" />
+      <module name="ch15-springboot-devtools" target="1.8" />
+      <module name="ch16-springboot-ehcache" target="1.8" />
+      <module name="ch17-springboot-redis" target="1.8" />
+      <module name="ch18-springboot-scheduled" target="1.8" />
+      <module name="ch19-quartz" target="1.8" />
+      <module name="ch20-springboot-quartz" target="1.8" />
+      <module name="ch21-springboot-jwt" target="1.8" />
+      <module name="test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ch01-springboot-hello" options="-parameters" />
+      <module name="ch02-springboot-servlet" options="-parameters" />
+      <module name="ch03-springboot-filter" options="-parameters" />
+      <module name="ch04-springboot-listener" options="-parameters" />
+      <module name="ch05-springboot-static-resources" options="-parameters" />
+      <module name="ch07-springboot-jsp" options="-parameters" />
+      <module name="ch08-springboot-freemarker" options="-parameters" />
+      <module name="ch09-springboot-thymeleaf" options="-parameters" />
+      <module name="ch10-springboot-mybatis" options="-parameters" />
+      <module name="ch11-springboot-jpa" options="-parameters" />
+      <module name="ch12-springboot-validata" options="-parameters" />
+      <module name="ch13-springboot-exception" options="-parameters" />
+      <module name="ch14-springboot-test" options="-parameters" />
+      <module name="ch15-springboot-devtools" options="-parameters" />
+      <module name="ch16-springboot-ehcache" options="-parameters" />
+      <module name="ch17-springboot-redis" options="-parameters" />
+      <module name="ch18-springboot-scheduled" options="-parameters" />
+      <module name="ch19-quartz" options="-parameters" />
+      <module name="ch20-springboot-quartz" options="-parameters" />
+      <module name="ch21-springboot-jwt" options="-parameters" />
+      <module name="test" options="-parameters" />
+    </option>
+  </component>
+</project>

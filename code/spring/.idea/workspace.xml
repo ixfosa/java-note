@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="sm:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="10e221e7-a85c-46d2-8fb5-9be00531d56d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1qmge73Eaa2hz1fTeh8jekgvnZZ" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../springmvc" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ixfosa.test" />
+      <recent name="com.ixfosa.pojo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\IdeaProjects\hellospring\loadprop\lib" />
+      <recent name="D:\code\IdeaProjects\hellospring\loadprop\src" />
+      <recent name="D:\code\IdeaProjects\hellospring\tx-annotation\src\com" />
+      <recent name="D:\code\IdeaProjects\hellospring" />
+      <recent name="D:\code\IdeaProjects\hellospring\tx\web\WEB-INF\lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Demo1">
+    <configuration name="Demo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ixfosa.test.Demo1" />
+      <module name="IoC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ixfosa.test.Demo13" />
+      <module name="IoC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo6" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ixfosa.test.Demo6" />
+      <module name="IoC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ixfosa.test.Test" />
+      <module name="tx" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ixfosa.test.Test" />
+      <module name="tx-annotation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ixfosa.test.Test" />
+      <module name="loadprop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ixfosa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/sm_war_exploded/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="sm:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/sm_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_hellospring_3" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60302" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="sm:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Demo6" />
+      <item itemvalue="Application.Demo13" />
+      <item itemvalue="Application.Test (3)" />
+      <item itemvalue="Application.Test (4)" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Demo1" />
+      <item itemvalue="Tomcat Server.Tomcat 9" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Demo1" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Test (4)" />
+        <item itemvalue="Application.Test (3)" />
+        <item itemvalue="Application.Demo13" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.13895781" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpringBeansView">
+    <option name="showModules" value="false" />
+    <option name="showFilesets" value="false" />
+    <option name="showFiles" value="false" />
+    <option name="showInfrastructureBeans" value="false" />
+    <option name="showDoc" value="false" />
+    <option name="showGraph" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10e221e7-a85c-46d2-8fb5-9be00531d56d" name="Default Changelist" comment="" />
+      <created>1617690271805</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617690271805</updated>
+      <workItem from="1617690275114" duration="4056000" />
+      <workItem from="1617694355900" duration="9988000" />
+      <workItem from="1617705149014" duration="5192000" />
+      <workItem from="1617713676453" duration="114000" />
+      <workItem from="1617782457272" duration="3284000" />
+      <workItem from="1617785790340" duration="479000" />
+      <workItem from="1617786279040" duration="145000" />
+      <workItem from="1617786440856" duration="1501000" />
+      <workItem from="1617787966969" duration="10473000" />
+      <workItem from="1617840238819" duration="209000" />
+      <workItem from="1617840779051" duration="135000" />
+      <workItem from="1617840943326" duration="1069000" />
+      <workItem from="1617842079523" duration="9000" />
+      <workItem from="1617842409421" duration="604000" />
+      <workItem from="1617843248810" duration="390000" />
+      <workItem from="1617850613873" duration="185000" />
+      <workItem from="1617862702078" duration="17781000" />
+      <workItem from="1617934840504" duration="8763000" />
+      <workItem from="1617948361967" duration="61000" />
+      <workItem from="1617948450190" duration="4957000" />
+      <workItem from="1617957545222" duration="27000" />
+      <workItem from="1617973273600" duration="14000" />
+      <workItem from="1618043916281" duration="21000" />
+      <workItem from="1618043972377" duration="216000" />
+      <workItem from="1618654058305" duration="40000" />
+      <workItem from="1618807966163" duration="44000" />
+      <workItem from="1620469841710" duration="17000" />
+      <workItem from="1622542399164" duration="220000" />
+      <workItem from="1626770595171" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="43" key="#Inspections" timestamp="1617866520623">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="233" y="43" key="#Inspections/0.0.1280.770@0.0.1280.770" timestamp="1617866520623" />
+    <state x="251" y="68" key="#Project_Structure" timestamp="1617936852011">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="251" y="68" key="#Project_Structure/0.0.1280.770@0.0.1280.770" timestamp="1617936852011" />
+    <state x="96" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617709819768">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="96" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.770@0.0.1280.770" timestamp="1617709819768" />
+    <state x="355" y="179" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617864521124">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="355" y="179" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.770@0.0.1280.770" timestamp="1617864521123" />
+    <state x="446" y="101" key="#com.intellij.ide.util.MemberChooser" timestamp="1617953788126">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="446" y="101" key="#com.intellij.ide.util.MemberChooser/0.0.1280.770@0.0.1280.770" timestamp="1617953788126" />
+    <state x="234" y="44" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1617709505765">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="234" y="44" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1280.770@0.0.1280.770" timestamp="1617709505765" />
+    <state x="453" y="296" key="#com.intellij.javaee.module.view.web.EditWebRootDialog" timestamp="1617709024468">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="453" y="296" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1280.770@0.0.1280.770" timestamp="1617709024468" />
+    <state x="419" y="235" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1617877465782">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="419" y="235" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.770@0.0.1280.770" timestamp="1617877465782" />
+    <state x="371" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617872921547">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="371" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.770@0.0.1280.770" timestamp="1617872921547" />
+    <state x="443" y="127" width="568" height="489" key="FileChooserDialogImpl" timestamp="1622542428784">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="443" y="127" width="568" height="489" key="FileChooserDialogImpl/0.0.1280.770@0.0.1280.770" timestamp="1622542428784" />
+    <state width="1238" height="273" key="GridCell.Tab.1.bottom" timestamp="1617800562973">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="273" key="GridCell.Tab.1.bottom/0.0.1280.770@0.0.1280.770" timestamp="1617800562973" />
+    <state width="1238" height="273" key="GridCell.Tab.1.center" timestamp="1617800562973">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="273" key="GridCell.Tab.1.center/0.0.1280.770@0.0.1280.770" timestamp="1617800562973" />
+    <state width="1238" height="273" key="GridCell.Tab.1.left" timestamp="1617800562973">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="273" key="GridCell.Tab.1.left/0.0.1280.770@0.0.1280.770" timestamp="1617800562973" />
+    <state width="1238" height="273" key="GridCell.Tab.1.right" timestamp="1617800562973">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="273" key="GridCell.Tab.1.right/0.0.1280.770@0.0.1280.770" timestamp="1617800562973" />
+    <state width="1040" height="172" key="GridCell.Tab.2.bottom" timestamp="1617785743499">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1040" height="172" key="GridCell.Tab.2.bottom/0.0.1280.770@0.0.1280.770" timestamp="1617785743499" />
+    <state width="1040" height="172" key="GridCell.Tab.2.center" timestamp="1617785743499">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1040" height="172" key="GridCell.Tab.2.center/0.0.1280.770@0.0.1280.770" timestamp="1617785743499" />
+    <state width="1040" height="172" key="GridCell.Tab.2.left" timestamp="1617785743499">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1040" height="172" key="GridCell.Tab.2.left/0.0.1280.770@0.0.1280.770" timestamp="1617785743499" />
+    <state width="1040" height="172" key="GridCell.Tab.2.right" timestamp="1617785743499">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1040" height="172" key="GridCell.Tab.2.right/0.0.1280.770@0.0.1280.770" timestamp="1617785743499" />
+    <state width="846" height="445" key="GridCell.Tab.4.bottom" timestamp="1617709903057">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="846" height="445" key="GridCell.Tab.4.bottom/0.0.1280.770@0.0.1280.770" timestamp="1617709903057" />
+    <state width="846" height="445" key="GridCell.Tab.4.center" timestamp="1617709903056">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="846" height="445" key="GridCell.Tab.4.center/0.0.1280.770@0.0.1280.770" timestamp="1617709903056" />
+    <state width="846" height="445" key="GridCell.Tab.4.left" timestamp="1617709903056">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="846" height="445" key="GridCell.Tab.4.left/0.0.1280.770@0.0.1280.770" timestamp="1617709903056" />
+    <state width="846" height="445" key="GridCell.Tab.4.right" timestamp="1617709903056">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="846" height="445" key="GridCell.Tab.4.right/0.0.1280.770@0.0.1280.770" timestamp="1617709903056" />
+    <state x="142" y="0" width="1022" height="715" key="SettingsEditor" timestamp="1618654096529">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="142" y="0" width="1022" height="715" key="SettingsEditor/0.0.1280.770@0.0.1280.770" timestamp="1618654096529" />
+    <state x="132" y="0" key="com.intellij.javaee.MapExternalResourceDialog" timestamp="1617841966995">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="132" y="0" key="com.intellij.javaee.MapExternalResourceDialog/0.0.1280.770@0.0.1280.770" timestamp="1617841966995" />
+    <state x="6" y="0" key="new project wizard" timestamp="1617953189564">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="6" y="0" key="new project wizard/0.0.1280.770@0.0.1280.770" timestamp="1617953189564" />
+    <state x="319" y="243" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1617713741155">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="319" y="243" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1280.770@0.0.1280.770" timestamp="1617713741155" />
+    <state x="324" y="225" key="run.anything.popup" timestamp="1617850798113">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="324" y="225" key="run.anything.popup/0.0.1280.770@0.0.1280.770" timestamp="1617850798113" />
+    <state x="304" y="93" width="672" height="678" key="search.everywhere.popup" timestamp="1617713727502">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="304" y="93" width="672" height="678" key="search.everywhere.popup/0.0.1280.770@0.0.1280.770" timestamp="1617713727502" />
+    <state x="321" y="0" key="spring file set editor" timestamp="1617934997994">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="321" y="0" key="spring file set editor/0.0.1280.770@0.0.1280.770" timestamp="1617934997994" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="hellospring" type="b2602c69:ProjectViewProjectNode" />
+        <item name="aop" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="hellospring" type="b2602c69:ProjectViewProjectNode" />
+        <item name="IoC" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="hellospring" type="b2602c69:ProjectViewProjectNode" />
+        <item name="sm" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/hellospring$Test1.ic" NAME="Test1 Coverage Results" MODIFIED="1617867127538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ixfosa.test.*</FILTER>
+    </SUITE>
+  </component>
+</project>

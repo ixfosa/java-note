@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--控制器类-->
+    <!--<bean id="hello" class="com.ixfosa.controller.DemoController" />-->
+    <bean name="/hello" class="com.ixfosa.controller.DemoController" />
+
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="hello" value-ref="hello" />
+            </map>
+        </property>
+    </bean>-->
+</beans>

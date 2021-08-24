@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SqlSessionFactory/SqlSessionFactory.iml" filepath="$PROJECT_DIR$/SqlSessionFactory/SqlSessionFactory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dynamicsql/dynamicsql.iml" filepath="$PROJECT_DIR$/dynamicsql/dynamicsql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linkedquery/linkedquery.iml" filepath="$PROJECT_DIR$/linkedquery/linkedquery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmlmapperfile/xmlmapperfile.iml" filepath="$PROJECT_DIR$/xmlmapperfile/xmlmapperfile.iml" />
+    </modules>
+  </component>
+</project>

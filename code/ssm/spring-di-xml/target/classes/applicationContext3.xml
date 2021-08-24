@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--声明School对象-->
+    <bean id="school" class="com.ixfosa.demo3.School">
+        <property name="name" value="家里蹲" />
+        <property name="address" value="火星" />
+    </bean>
+
+    <!--使用name属性实现构造注入-->
+    <bean id="student1" class="com.ixfosa.demo3.Student">
+        <constructor-arg name="myname" value="大龙虾" />
+        <constructor-arg name="myage" value="21" />
+        <constructor-arg name="mySchool" ref="school" />
+    </bean>
+
+    <!--使用index属性-->
+    <bean id="student2" class="com.ixfosa.demo3.Student">
+        <constructor-arg index="0" value="大龙虾" />
+        <constructor-arg index="1" value="21" />
+        <constructor-arg index="2" ref="school" />
+    </bean>
+
+    <!--省略index-->
+    <bean id="student3" class="com.ixfosa.demo3.Student">
+        <constructor-arg value="大龙虾" />
+        <constructor-arg value="21" />
+        <constructor-arg ref="school" />
+    </bean>
+
+    <!--创建File,使用构造注入-->
+    <bean name="myFile" class="java.io.File">
+        <constructor-arg name="parent" value="D:/code/IdeaProjects/\ssm/spring-di-xml" />
+        <constructor-arg name="child" value="readme.txt" />
+    </bean>
+</beans>

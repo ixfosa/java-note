@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/ch01-springboot-hello/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch02-springboot-servlet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch03-springboot-filter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch04-springboot-listener/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch05-springboot-static-resources/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch07-springboot-jsp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch07-springboot-jsp/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch08-springboot-freemarker/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch09-springboot-thymeleaf/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch10-springboot-mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch11-springboot-jpa/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch12-springboot-validata/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch13-springboot-exception/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch14-springboot-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch15-springboot-devtools/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch16-springboot-ehcache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch17-springboot-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch18-springboot-scheduled/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch19-quartz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch20-springboot-quartz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ch21-springboot-jwt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

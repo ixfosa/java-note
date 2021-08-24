@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ixfosa</groupId>
+    <artifactId>ssm</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>mybatis-hello</module>
+        <module>mybatis-proxy-dao</module>
+        <module>mybatis-dao</module>
+        <module>mybatis-parameter</module>
+        <module>mybatis-return-result</module>
+        <module>mybatis-dynamic-sql</module>
+        <module>spring-hello</module>
+        <module>spring-di-xml</module>
+        <module>spring-di-anno</module>
+        <module>spring-aop-leadin</module>
+        <module>spring-aop-aspectj</module>
+        <module>spring-mybatis</module>
+        <module>spring-trans</module>
+        <module>spring-trans-anno</module>
+        <module>spring-trans-aspectj</module>
+        <module>spring-web</module>
+        <module>springmvc-hello</module>
+        <module>springmvc-requestmapping</module>
+        <module>springmvc-receive-param</module>
+        <module>springmvc-return</module>
+        <module>springmvc-url-pattern</module>
+        <module>springmvc-path</module>
+        <module>springmvc-spring-mybatis</module>
+        <module>springmvc-forward-redirect</module>
+        <module>springmvc-exception-handler</module>
+        <module>springmvc-interceptor</module>
+        <module>springmvc-interceptor-permission</module>
+        <module>springmvc-file-upload</module>
+        <module>springmvc-websocket</module>
+        <module>servlet-websocket</module>
+    </modules>
+</project>

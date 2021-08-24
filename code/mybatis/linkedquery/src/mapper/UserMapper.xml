@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+
+    <!-- 一对多 根据 user id查询用户及其关联的订单信息：级联查询的第一种方法（嵌套查询） -->
+    <resultMap id="userMap1" type="user">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="age" column="age" />
+        <result property="sex" column="sex" />
+        <!-- 一对多级联查询，ofType表示集合中的元素类型，将id传递给selectOrdersByld -->
+        <collection property="ordersList" ofType="order"
+                    column="id" select="dao.OrderDao.selectOrdersById" />
+    </resultMap>
+
+    <select id="selectUserOrdersById1" resultMap="userMap1" parameterType="int">
+        select * from user where id = #{id}
+    </select>
+
+    <!-- 一对多根据 user id查询用户及其关联的订单信息：级联查询的第二种方法（嵌套结果） -->
+    <resultMap id="userMap2" type="user">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="age" column="age" />
+        <result property="sex" column="sex" />
+        <!-- 一对多级联查询，ofType表示集合中的元素类型，将id传递给selectOrdersByld -->
+        <collection property="ordersList" ofType="order">
+            <id property="id" column="oid" />
+            <result property="ordersn" column="ordersn" />
+        </collection>
+    </resultMap>
+
+
+    <select id="selectUserOrdersById2" resultMap="userMap2" parameterType="int">
+        select user.*, orders.* from user, orders
+        where user.id = orders.user_id and user.id = #{uid}
+    </select>
+
+    <!-- 一对多 根据uid查询用户及其关联的订单信息：连接查询（使用POJO存储结果） -->
+    <select id="selectUserOrdersById3" resultType="selectUserOrdersById" parameterType="int">
+        select user.*, orders.oid as oid, orders.ordersn from user, orders
+        where user.id = orders.user_id and user.id = #{id}
+    </select>
+</mapper>

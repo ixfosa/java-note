@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="resultmap.mapper.UserMapper">
+    <resultMap id="userMap" type="bean.User" autoMapping="true">
+        <id property="tid" column="id" />
+        <result property="uname" column="name" />
+    </resultMap>
+
+    <select id="selUserById" resultMap="userMap" parameterType="int">
+        select id, name, age, sex from user where id=#{tid}
+    </select>
+</mapper>

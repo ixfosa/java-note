@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- id 表示获取到对象标识
+         class 创建哪个类的对象
+    -->
+    <bean id="person" class="com.ixfosa.pojo.Person"></bean>
+
+    <bean id="person2" class="com.ixfosa.pojo.Person">
+        <!--
+            index : 参数的索引,从 0 开始
+            name: 参数名
+            type:类型(区分开关键字和封装类 int 和 Integer)
+            value 基本数据类型或String等
+            ref 引用另一个 bean
+        -->
+        <constructor-arg index="0" name="id" type="int" value="123" />
+        <constructor-arg index="1" name="name" type="java.lang.String" value="ixfosa" />
+        <constructor-arg index="2" name="age" type="int" value="23" />
+        <constructor-arg index="3" name="sex" type="char" value="男" />
+    </bean>
+
+    <bean id="factory" class="com.ixfosa.pojo.PeopleFactory" />
+    <bean id="person3" factory-bean="factory" factory-method="newInstance" />
+
+    <bean id="person4" class="com.ixfosa.pojo.PeopleStaticFactory" factory-method="newInstance"/>
+
+    <bean id="user1" class="com.ixfosa.pojo.User">
+        <property name="id" value="4410" />
+        <property name="name" value="小佛" />
+    </bean>
+
+    <bean id="user11" class="com.ixfosa.pojo.User">
+        <property name="id">
+            <value>123</value>
+        </property>
+        <property name="name">
+            <value>小佛</value>
+        </property>
+    </bean>
+
+    <!--如果属性是 Set<?>-->
+    <bean id="user2" class="com.ixfosa.pojo.User">
+        <property name="set">
+            <set>
+                <value>long</value>
+                <value>zhong</value>
+            </set>
+        </property>
+    </bean>
+
+    <!--如果 set 中就只有一个值-->
+    <bean id="user22" class="com.ixfosa.pojo.User">
+        <property name="set" value="zhong" />
+    </bean>
+
+    <!--如果属性是 List<?>-->
+    <bean id="user3" class="com.ixfosa.pojo.User">
+        <property name="list">
+            <list>
+                <value>long</value>
+                <value>zhong</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--如果 list 中就只有一个值-->
+    <bean id="user33" class="com.ixfosa.pojo.User">
+        <property name="list" value="long" />
+    </bean>
+
+   <!-- 如果属性是 map-->
+    <bean id="user4" class="com.ixfosa.pojo.User">
+        <property name="map">
+            <map>
+                <entry key="name1" value="long" />
+                <entry key="name2" value="zhong" />
+            </map>
+        </property>
+    </bean>
+
+    <!--如果属性是数组-->
+    <bean id="user5" class="com.ixfosa.pojo.User">
+        <property name="ints">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </array>
+        </property>
+    </bean>
+    <!--如果 数组 中就只有一个值-->
+    <bean id="user55" class="com.ixfosa.pojo.User">
+        <property name="ints" value="66" />
+    </bean>
+
+    <!-- 如果属性是复杂数据类型 -->
+    <bean id="user6" class="com.ixfosa.pojo.User">
+        <property name="person" ref="person6" />
+    </bean>
+
+    <bean id="person6" class="com.ixfosa.pojo.Person">
+        <property name="name" value="ixfosa" />
+        <property name="sex" value="男" />
+    </bean>
+
+    <bean id="user7" class="com.ixfosa.pojo.User">
+        <property name="friends" ref="person7" />
+    </bean>
+
+    <bean id="user77" class="com.ixfosa.pojo.User">
+        <property name="friends">
+           <list>
+               <ref bean="person7" />
+               <ref bean="person7" />
+           </list>
+        </property>
+    </bean>
+
+    <bean id="person7" class="com.ixfosa.pojo.Person">
+        <property name="name" value="ixfosa" />
+        <property name="sex" value="男" />
+    </bean>
+
+    <!-- 使用设值注入方式装配Person实例 -->
+    <bean id="flower1" class="com.ixfosa.pojo.Flower">
+        <property name="id" value="1" />
+        <property name="name" value="黑菊花" />
+    </bean>
+
+    <!-- 使用构造方法装配Person实例 -->
+    <bean id="flower2" class="com.ixfosa.pojo.Flower">
+        <constructor-arg index="0" type="int" name="id" value="2" />
+        <constructor-arg index="1" type="java.lang.String" name="name" value="粉菊花" />
+    </bean>
+</beans>

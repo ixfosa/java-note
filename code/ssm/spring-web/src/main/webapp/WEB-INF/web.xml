@@ -1,0 +1,29 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <!--
+    注册监听器ContextLoaderListener
+      监听器被创建对象后，会读取/WEB-INF/spring.xml
+      为什么要读取文件：因为在监听器中要创建ApplicationContext对象，需要加载配置文件。
+      /WEB-INF/applicationContext.xml就是监听器默认读取的spring配置文件路径
+
+      可以修改默认的文件位置，使用context-param重新指定文件的位置
+
+
+      配置监听器：目的是创建容器对象，创建了容器对象， 就能把spring.xml配置文件中的所有对象都创建好。
+      用户发起请求就可以直接使用对象了。
+  -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <welcome-file-list>
+    <welcome-file>regist.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

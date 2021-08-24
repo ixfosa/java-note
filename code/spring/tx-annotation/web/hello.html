@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            document.getElementById("b1").onclick = function () {
+                document.getElementById("t2").value = document.getElementById("t1").value;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="t1" />
+    <input type="button" value="copy" id="b1">
+    <input type="text" id="t2">
+</body>
+</html>

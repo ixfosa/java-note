@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--使用context命名空间，通知spring扫描指定目录，进行注解的解析-->
+    <context:component-scan base-package="com.ixfosa" />
+
+    <!--
+        singleton 是 Spring 容器默认的作用域，当一个 Bean 的作用域为 singleton 时，
+        Spring 容器中只会存在一个共享的 Bean 实例，并且所有对 Bean 的请求，只要 id 与该 Bean 定义相匹配，
+        就只会返回 Bean 的同一个实例。
+    -->
+    <bean id="flower1" class="com.ixfosa.pojo.Flower" scope="singleton" />
+
+    <!--使用 prototype 作用域的 Bean 会在每次请求该 Bean 时都会创建一个新的 Bean 实例。-->
+    <bean id="flower2" class="com.ixfosa.pojo.Flower" scope="prototype" />
+</beans>

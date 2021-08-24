@@ -1,0 +1,23 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 86138
+  Date: 2021/4/11
+  Time: 15:55
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+  <head>
+    <title>hello</title>
+  </head>
+  <body>
+  <form action="demo1" method="post">
+    学号：<input type="number" name="id" />
+    用户名：<input type="text" name="username" />
+    密码：<input type="password" name="password" />
+    性别：<input type="radio" name="sex" value="男" />男
+    <input type="radio" name="sex" value="女"/>女
+    <input type="submit" value="submit" />
+  </form>
+  </body>
+</html>

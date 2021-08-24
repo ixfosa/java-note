@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="select.mapper.FlowerMapper">
+    <select id="selFlowerById" parameterType="int" resultType="select.bean.Flower">
+        select * from flower where id = #{id}
+    </select>
+
+    <select id="selFlowerByProductionAndPrice" resultType="select.bean.Flower">
+        select * from flower where production like concat('%',#{production},'%') or price > #{price}
+    </select>
+
+    <select id="selFlowerByBean" parameterType="select.bean.Flower" resultType="select.bean.Flower">
+        select * from flower where production like concat('%',#{production},'%') or price > #{price}
+    </select>
+</mapper>

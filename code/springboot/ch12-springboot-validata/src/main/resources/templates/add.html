@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/save}" method="post">
+    姓名:<input type="text" name="name">
+    <font color="red" th:errors="${user.name}"></font> <br>
+    密码:<input type="password" name="password">
+    <font color="red" th:errors="${user.password}"></font> <br>
+    年龄:<input type="number" name="age" max="150">
+    <font color="red" th:errors="${user.age}"></font> <br>
+    邮箱:<input type="text" name="email">
+    <font color="red" th:errors="${user.email}"></font> <br>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>

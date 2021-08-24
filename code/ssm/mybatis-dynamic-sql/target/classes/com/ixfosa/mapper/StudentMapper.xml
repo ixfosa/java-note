@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ixfosa.dao.StudentDao">
+
+    <!--定义sql片段-->
+    <sql id="stuSql">
+        select id, name, email, age from student
+    </sql>
+
+    <!-- if
+         <if:test="使用参数java对象的属性值作为判断条件，语法 属性=XXX值">
+    -->
+    <select id="selectStudentIf" resultType="student">
+        <include refid="stuSql"></include>
+        where 1 = 1
+        <if test="name != null and name !=''">
+            and name = #{name}
+        </if>
+        <if test="age > 0">
+            and age > #{age}
+        </if>
+    </select>
+
+    <!--
+     where: <where> <if> <if>...</where>
+     在 mapper 的动态 SQL 中若出现大于号（>）、小于号（<）、大于等于号（>=），小于等于号（<=）等
+     符号，最好将其转换为实体符号。否则，XML 可能会出现解析出错问题。
+    -->
+    <select id="selectStudentWhere" resultType="student">
+        <include refid="stuSql" />
+        <where>
+            <if test="name != null and name !=''">
+                and name = #{name}
+            </if>
+            <if test="age > 0">
+                and age &lt; #{age}
+            </if>
+        </where>
+    </select>
+
+    <!--foreach使用1 ， List<Integer>-->
+    <select id="selectForeachOne" resultType="student">
+        <include refid="stuSql" />
+         where id in 
+         <foreach collection="list" item="myid" separator="," open="(" close=")">
+             #{myid}
+         </foreach>
+    </select>
+
+    <!--foreach使用2 ， List<Student> -->
+    <select id="selectForeachTwo" resultType="student">
+        <include refid="stuSql" />
+        where id in (
+        <foreach collection="list" item="stu">
+            #{stu.id},
+        </foreach>
+        -1)
+    </select>
+
+    <select id="selectAll" resultType="student">
+        <include refid="stuSql" />
+    </select>
+</mapper>

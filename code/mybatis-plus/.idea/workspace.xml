@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="17cec6b3-20c1-4541-b227-eab0449aee0c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\software\maven\repository" />
+        <option name="mavenHome" value="D:/software/maven/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="D:\software\maven\apache-maven-3.8.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1x2KVJrsdjTWg9l3CuySkWlBfv3" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/generator/src/main/resources" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="show.run.dashboard.notification" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.ixfosa.enums" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\IdeaProjects\mybatis-plus\generator\src\main\resources" />
+      <recent name="D:\code\IdeaProjects\mybatis-plus\crud\src\main\java\top\ixfosa" />
+      <recent name="D:\code\IdeaProjects\mybatis-plus\crud\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GeneratorApplication">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.Main" />
+      <module name="generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrudApplicationTests.selectTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.CrudApplicationTests" />
+      <option name="METHOD_NAME" value="selectTest2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrudApplicationTests.selectTest3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.CrudApplicationTests" />
+      <option name="METHOD_NAME" value="selectTest3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrudApplicationTests.selectTest4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.CrudApplicationTests" />
+      <option name="METHOD_NAME" value="selectTest4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrudApplicationTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.CrudApplicationTests" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CrudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="crud" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ixfosa.CrudApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="generator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ixfosa.GeneratorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MpApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="anno" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ixfosa.MpApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CrudApplicationTests.test" />
+        <item itemvalue="JUnit.CrudApplicationTests.selectTest4" />
+        <item itemvalue="JUnit.CrudApplicationTests.selectTest3" />
+        <item itemvalue="JUnit.CrudApplicationTests.selectTest2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_INTERFACES,SHOW_INHERITED,SHOW_PROPERTIES" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17cec6b3-20c1-4541-b227-eab0449aee0c" name="Default Changelist" comment="" />
+      <created>1629547765631</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629547765631</updated>
+      <workItem from="1629547769220" duration="6396000" />
+      <workItem from="1629633745345" duration="6519000" />
+      <workItem from="1629697079075" duration="853000" />
+      <workItem from="1629697949198" duration="417000" />
+      <workItem from="1629698419955" duration="13827000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="43" key="#Notifications" timestamp="1629697930245">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="233" y="43" key="#Notifications/0.0.1280.770@0.0.1280.770" timestamp="1629697930245" />
+    <state x="233" y="43" key="#Project_Structure" timestamp="1629547771610">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="233" y="43" key="#Project_Structure/0.0.1280.770@0.0.1280.770" timestamp="1629547771610" />
+    <state x="446" y="88" key="#com.intellij.ide.util.MemberChooser" timestamp="1629701334597">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="446" y="88" key="#com.intellij.ide.util.MemberChooser/0.0.1280.770@0.0.1280.770" timestamp="1629701334597" />
+    <state x="419" y="235" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1629704853221">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="419" y="235" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.770@0.0.1280.770" timestamp="1629704853221" />
+    <state x="388" y="188" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1629700809544">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="388" y="188" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1280.770@0.0.1280.770" timestamp="1629700809544" />
+    <state x="371" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629725408372">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="371" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.770@0.0.1280.770" timestamp="1629725408372" />
+    <state width="1238" height="-12" key="GridCell.Tab.0.bottom" timestamp="1629726062105">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.0.bottom/0.0.1280.770@0.0.1280.770" timestamp="1629726062105" />
+    <state width="1238" height="-12" key="GridCell.Tab.0.center" timestamp="1629726062105">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.0.center/0.0.1280.770@0.0.1280.770" timestamp="1629726062105" />
+    <state width="1238" height="-12" key="GridCell.Tab.0.left" timestamp="1629726062105">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.0.left/0.0.1280.770@0.0.1280.770" timestamp="1629726062105" />
+    <state width="1238" height="-12" key="GridCell.Tab.0.right" timestamp="1629726062105">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.0.right/0.0.1280.770@0.0.1280.770" timestamp="1629726062105" />
+    <state width="1238" height="-12" key="GridCell.Tab.1.bottom" timestamp="1629726062106">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.1.bottom/0.0.1280.770@0.0.1280.770" timestamp="1629726062106" />
+    <state width="1238" height="-12" key="GridCell.Tab.1.center" timestamp="1629726062105">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.1.center/0.0.1280.770@0.0.1280.770" timestamp="1629726062105" />
+    <state width="1238" height="-12" key="GridCell.Tab.1.left" timestamp="1629726062105">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.1.left/0.0.1280.770@0.0.1280.770" timestamp="1629726062105" />
+    <state width="1238" height="-12" key="GridCell.Tab.1.right" timestamp="1629726062105">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.1.right/0.0.1280.770@0.0.1280.770" timestamp="1629726062105" />
+    <state x="171" y="40" key="Maven.ArtifactSearchDialog" timestamp="1629724735071">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="171" y="40" key="Maven.ArtifactSearchDialog/0.0.1280.770@0.0.1280.770" timestamp="1629724735071" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1629697874963">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.770@0.0.1280.770" timestamp="1629697874963" />
+    <state x="6" y="0" key="new project wizard" timestamp="1629709487638">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="6" y="0" key="new project wizard/0.0.1280.770@0.0.1280.770" timestamp="1629709487638" />
+    <state x="303" y="92" width="672" height="678" key="search.everywhere.popup" timestamp="1629553468615">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="303" y="92" width="672" height="678" key="search.everywhere.popup/0.0.1280.770@0.0.1280.770" timestamp="1629553468615" />
+  </component>
+</project>

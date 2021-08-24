@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5df59c56-d128-4e45-b064-1f469caf5e08" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\software\maven\repository" />
+        <option name="mavenHome" value="D:/software/maven/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="D:\software\maven\apache-maven-3.8.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1uqFooKTGgdFwWtlO8lKxPMNjUj" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/blog/src/main/java/top/ixfosa/blog/controller" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="top.ixfosa.blog" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\IdeaProjects\springboot\advance\blog\src\main\java\top\ixfosa\blog\controller" />
+      <recent name="D:\code\IdeaProjects\springboot\advance\blog\src\main\resources\templates" />
+      <recent name="D:\code\IdeaProjects\springboot\advance\blog\src\main\resources\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\IdeaProjects\springboot\advance\blog\src\main\java\top\ixfosa" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="blog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ixfosa.blog.App" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5df59c56-d128-4e45-b064-1f469caf5e08" name="Default Changelist" comment="" />
+      <created>1625385389768</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625385389768</updated>
+      <workItem from="1625385393495" duration="1979000" />
+      <workItem from="1625638900144" duration="2111000" />
+      <workItem from="1625803444335" duration="40000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="43" key="#Project_Structure" timestamp="1625385555598">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="233" y="43" key="#Project_Structure/0.0.1280.770@0.0.1280.770" timestamp="1625385555598" />
+    <state x="96" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625385986727">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="96" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.770@0.0.1280.770" timestamp="1625385986727" />
+    <state x="419" y="251" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1625386055547">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="419" y="251" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.770@0.0.1280.770" timestamp="1625386055547" />
+    <state x="421" y="140" key="FileChooserDialogImpl" timestamp="1625803449431">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="421" y="140" key="FileChooserDialogImpl/0.0.1280.770@0.0.1280.770" timestamp="1625803449431" />
+    <state width="1238" height="420" key="GridCell.Tab.0.bottom" timestamp="1625387373930">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="420" key="GridCell.Tab.0.bottom/0.0.1280.770@0.0.1280.770" timestamp="1625387373930" />
+    <state width="1238" height="420" key="GridCell.Tab.0.center" timestamp="1625387373930">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="420" key="GridCell.Tab.0.center/0.0.1280.770@0.0.1280.770" timestamp="1625387373930" />
+    <state width="1238" height="420" key="GridCell.Tab.0.left" timestamp="1625387373929">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="420" key="GridCell.Tab.0.left/0.0.1280.770@0.0.1280.770" timestamp="1625387373929" />
+    <state width="1238" height="420" key="GridCell.Tab.0.right" timestamp="1625387373930">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="420" key="GridCell.Tab.0.right/0.0.1280.770@0.0.1280.770" timestamp="1625387373930" />
+    <state width="1238" height="24" key="GridCell.Tab.1.bottom" timestamp="1625387369743">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="24" key="GridCell.Tab.1.bottom/0.0.1280.770@0.0.1280.770" timestamp="1625387369743" />
+    <state width="1238" height="24" key="GridCell.Tab.1.center" timestamp="1625387369743">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="24" key="GridCell.Tab.1.center/0.0.1280.770@0.0.1280.770" timestamp="1625387369743" />
+    <state width="1238" height="24" key="GridCell.Tab.1.left" timestamp="1625387369743">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="24" key="GridCell.Tab.1.left/0.0.1280.770@0.0.1280.770" timestamp="1625387369743" />
+    <state width="1238" height="24" key="GridCell.Tab.1.right" timestamp="1625387369743">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="24" key="GridCell.Tab.1.right/0.0.1280.770@0.0.1280.770" timestamp="1625387369743" />
+    <state x="7" y="0" key="new project wizard" timestamp="1625803481595">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="7" y="0" key="new project wizard/0.0.1280.770@0.0.1280.770" timestamp="1625803481595" />
+  </component>
+</project>

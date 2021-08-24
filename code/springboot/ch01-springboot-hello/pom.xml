@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<!--继承 SpringBoot 框架的一个父项目，所有自己开发的 Spring Boot 都必须的继承-->
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<!--当前项目的 GAV 坐标-->
+	<groupId>top.ixfosa.springboot</groupId>
+	<artifactId>ch01-springboot-hello</artifactId>
+	<version>0.0.1</version>
+
+	<!--maven 项目名称，可以删除-->
+	<name>ch01-springboot-hello</name>
+
+	<!--maven 属性配置，可以在其它地方通过${}方式进行引用-->
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<!--SpringBoot框架web项目起步依赖，通过该依赖自动关联其它依赖，不需要一个一个去添加了-->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!--解决使用@ConfigurationProperties 注解出现警告问题-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!--SpringBoot 提供的打包编译等插件-->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
