@@ -88,6 +88,21 @@
 
 ###  注册中心概述
 
+服务注册中心 通过特定协议来完成服务对外的统一(管理)。
+
+Dubbo 提供 的注册中心有如下几种类型可供选： 
+
++ Multicast 注册中心：组播方式 
++ Redis 注册中心：使用 Redis 作为注册中心 
++ Simple 注册中心：就是一个 dubbo 服务。作为注册中心。提供查找服务的功能。 
++ Zookeeper 注册中心：使用 Zookeeper 作为注册中心，Zookeeper 是一个高性能的，分布式的，开放源码的分布式应用程序协调服务。简称 zk。
+
+
+
+注册中心工作方式
+
+<img src="../../_media/注册中心工作方式.png" alt="注册中心工作方式" style="zoom: 50%;" />
+
 
 
 ### 安装 zookeeper
@@ -108,9 +123,40 @@
 >
 > 避免与 `dubbo-admin` 端口冲突
 
+```properties
+# 修改默认 启动所占用的端口
+admin.serverPort=8083
+
+# 心跳的时间，单位毫秒. Zookeeper 服务器之间或客户端与服务器之间维持心跳的时间间隔，
+# 也就是每个 tickTime 时间就会发送一个心跳。表明存活状态。
+tickTime=2000
+
+# The number of ticks that the initial 
+# synchronization phase can take
+initLimit=10
+# The number of ticks that can pass between 
+# sending a request and getting an acknowledgement
+syncLimit=5
+
+# 数据目录，可以是任意目录。存储 zookeeper 的快照文件、pid 文件，默认为/tmp/zookeeper，
+# 建议在 zookeeper 安装目录下创建 data 目录，
+# 将 dataDir 配置改为/usr/local/zookeeper-3.4.10/data
+dataDir=../data
+
+# 客户端连接 zookeeper 的端口，即 zookeeper 对外的服务端口，默认为 2181
+clientPort=2181
+```
 
 
-### dubbo-admin管理控制台
+
+## dubbo-admin 监控中心
+
+dubbo 的使用，其实只需要有注册中心，消费者，提供者这三个就可以使用了，但是并不能 看到有哪些消费者和提供者，为了更好的调试，发现问题，解决问题，因此引入 dubbo-admin。 通过 dubbo-admin 可以对消费者和提供者进行管理。可以在 dubbo 应用部署做动态的调整， 服务的管理。
+
+> + `dubbo-admin` 图形化的服务管理页面；安装时需要指定注册中心地址，即可从注册中心中获取到所有的提 供者/消费者进行配置管理
+> + `dubbo-monitor-simple` 简单的监控中心；
+
+
 
 1. 下载dubbo-admin
 
@@ -155,12 +201,622 @@
 
 
 
-### 使用 Zookeeper
 
 
+## 使用 Zookeeper
+
+### 工程架构
+
++ 分包 
+  + 建议将服务接口、服务模型、服务异常等均放在公共包中。
++ 粒度 
+  + 服务接口尽可能大粒度，每个服务方法应代表一个功能，而不是某功能的一个步骤， 否则将面临分布式事务问题，Dubbo 暂未提供分布式事务支持。 
+  + 服务接口建议以业务场景为单位划分，并对相近业务做抽象，防止接口数量爆炸。
+  + **不建议使用过于抽象的通用接口**，如：Map query(Map)，这样的接口没有明确语义， 会给后期维护带来不便。
++ 版本
+  + 每个接口都应定义版本号，为后续不兼容升级提供可能
+  + 如： `<dubbo:service interface="com.xxx.XxxService" version="1.0" />`
+  + 建议使用两位版本号，要变更服务版本。先升级一半提供者为新版本，再将消费者全 部升为新版本，然后将剩下的一半提供者升为新版本。
+
++ 新建三个 maven javase 工程
+  + service-interface：服务接口 (被服务提供者、服务消费者所依赖)
+  + service-provider：服务提供者
+  + service-consumer：服务消费者
+
+### service-interface：接口工程
+
++ 项目结构
+
+  ```java
+  |-- src
+  	|-- main
+  		|-- java
+  			|-- top.
+  				|-- ixfosa
+  					|-- service
+                          |-- HelloService.java
+                          |-- SayService.java
+                   	|-- App.java
+  ```
+
+  
+
++ HelloService.java
+
+  ```java
+  public interface HelloService {
+      void hello();
+  }
+  ```
+
+  
+
++ SayService.java
+
+  ```java
+  public interface SayService {
+      void say();
+  }
+  ```
+
+  
+
+### service-provider：服务提供者
+
++ 项目结构
+
+  ```java
+  |-- src
+  	|-- main
+  		|-- java
+  			|-- top
+  				|-- ixfosa
+  					|-- service
+                          |-- impl
+                          	|-- HelloServiceImpl.java
+                   	|-- App.java
+      	|-- resources
+      		|-- provider.xml
+  |-- pom.xml
+  ```
+
++ pom.xml
+
+  ```xml
+  <!-- 引入dubbo -->
+  <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+      <version>2.6.2</version>
+  </dependency>
+  
+  <!-- 注册中心使用的是zookeeper，引入操作zookeeper的客户端端 -->
+  <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+      <version>2.12.0</version>
+  </dependency>
+  
+  <!-- 接口工程,公共资源项目 -->
+  <dependency>
+      <groupId>top.ixfosa</groupId>
+      <artifactId>service-interface</artifactId>
+      <version>1.0</version>
+  </dependency>
+  
+  <!-- Spring依赖 -->
+  <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.2.16.RELEASE</version>
+  </dependency>
+  ```
+
++ HelloServiceImpl.java
+
+  ```java
+  public class HelloServiceImpl implements HelloService {
+      @Override
+      public void hello() {
+          System.out.println("Hello Dubbo...");
+      }
+  }
+  ```
+
++ provider.xml
+
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://dubbo.apache.org/schema/dubbo
+         http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+  
+      <!-- 1、指定当前服务/应用的名字（同样的服务名字相同，不要和别的服务同名） -->
+      <dubbo:application name="service-provider" />
+  
+      <!-- 2、指定注册中心的位置 -->
+      <!-- <dubbo:registry address="zookeeper://127.0.0.1:2181" /> -->
+      <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
+  
+      <!-- 3、指定通信规则（通信协议？通信端口） -->
+      <dubbo:protocol name="dubbo" port="20880" />
+  
+      <!-- 4、暴露服务   ref：指向服务的真正的实现对象 -->
+      <dubbo:service interface="top.ixfosa.service.HelloService"
+                     ref="helloService" timeout="1000" version="1.0.0">
+          <dubbo:method name="hello" timeout="1000" />
+      </dubbo:service>
+  
+      <!-- 加载业务接口的实现类到spring容器中 -->
+      <bean id="helloService" class="top.ixfosa.service.impl.HelloServiceImpl" />
+  	
+      <!--统一设置服务提供方的规则  -->
+      <dubbo:provider timeout="1000" />
+      
+      <!-- 连接监控中心 -->
+      <!-- <dubbo:monitor protocol="registry" /> -->
+  </beans>
+  ```
+
++ App.java
+
+  ```java
+  public class App {
+      public static void main( String[] args ) throws IOException {
+          ClassPathXmlApplicationContext ioc =
+                  new ClassPathXmlApplicationContext("provider.xml");
+  
+          ioc.start();
+          System.in.read();
+      }
+  }
+  ```
+
+
+
+### service-consumer：服务消费者
+
++ 项目结构
+
+  ```java
+  |-- src
+  	|-- main
+  		|-- java
+  			|-- top
+  				|-- ixfosa
+  					|-- service
+                          |-- impl
+                          	|-- SayServiceImpl.java
+                   	|-- App.java
+      	|-- resources
+      		|-- consumer.xml
+  |-- pom.xml
+  ```
+
++ pom.xml
+
+  ```xml
+  <!-- 引入dubbo -->
+  <!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
+  <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+      <version>2.6.2</version>
+  </dependency>
+  <!-- 注册中心使用的是zookeeper，引入操作zookeeper的客户端端 -->
+  <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+      <version>2.12.0</version>
+  </dependency>
+  
+  <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.2.16.RELEASE</version>
+  </dependency>
+  
+  <!-- 接口工程 -->
+  <dependency>
+      <groupId>top.ixfosa</groupId>
+      <artifactId>service-interface</artifactId>
+      <version>1.0</version>
+  </dependency>
+  ```
+
++ SayServiceImpl.java
+
+  ```java
+  @Service
+  public class SayServiceImpl implements SayService  {
+      @Autowired
+      private HelloService helloService;
+  
+      @Override
+      public void say() {
+          System.out.println("say...");
+          helloService.hello();
+      }
+  }
+  ```
+
++ consumer.xml
+
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:context="http://www.springframework.org/schema/context"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+  	   http://www.springframework.org/schema/context/spring-context-4.3.xsd
+         http://dubbo.apache.org/schema/dubbo
+         http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+  
+      <!-- 开启Spring注解扫描 -->
+      <context:component-scan base-package="top.ixfosa.service.impl" />
+      
+      <!-- 指定当前服务/应用的名字 -->
+      <dubbo:application name="service-provider" />
+  
+      <!-- 指定注册中心的位置 -->
+      <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+  
+  
+      <!-- 配置本地存根 -->
+      <!--声明需要调用的远程服务的接口；生成远程服务代理  -->
+      <!--
+          1）、精确优先 (方法级优先，接口级次之，全局配置再次之)
+          2）、消费者设置优先(如果级别一样，则消费方优先，提供方次之)
+      -->
+      <!-- timeout="0" 默认是1000ms-->
+      <!-- retries="":重试次数，不包含第一次调用，0代表不重试-->
+      <!-- 幂等（设置重试次数）【查询、删除、修改】、非幂等（不能设置重试次数）【新增】 -->
+      <dubbo:reference interface="top.ixfosa.service.HelloService"
+                       id="helloService" timeout="5000" retries="3" version="*">
+          <!-- <dubbo:method name="hello" timeout="1000" /> -->
+      </dubbo:reference>
+  
+  
+      <!-- 配置当前消费者的统一规则：所有的服务都不检查 -->
+      <dubbo:consumer check="false" timeout="5000"></dubbo:consumer>
+  
+      <!-- <dubbo:monitor protocol="registry"></dubbo:monitor> -->
+      <!-- <dubbo:monitor address="127.0.0.1:7070"></dubbo:monitor> -->
+  </beans>
+  ```
+
++ App.java
+
+  ```java
+  public class App {
+      public static void main( String[] args ) throws IOException {
+          ClassPathXmlApplicationContext ioc =
+                  new ClassPathXmlApplicationContext("consumer.xml");
+  
+          SayService sayService = ioc.getBean(SayService.class);
+          sayService.say();
+  
+          System.out.println( "Hello World!" );
+          System.out.println("调用完成....");
+  
+          System.in.read();
+      }
+  }
+  ```
+
+
+
+### 运行应用
+
+1. 启动 zookeeper 客户端  `zkServer.cmd`
+
+2. 启动 dubbo-admin-server 后台，` java -jar  jar文件`
+3. 启动 dubbo-admin-ui 前台，`npm run dev`
+4. 启动 service-provider 服务提供者
+5. 启动 service-consumer：服务消费者
+
+```java
+// service-provider：服务提供者 控制台输出
+Hello Dubbo...
+
+//service-consumer：服务消费者 控制台输出
+say...
+Hello World!
+调用完成....
+```
+
+![dubbo使用zookeeper](../../_media/dubbo使用zookeeper.png)
 
 
 
 
 
 ## 直连方式
+
+### 直连方式概述
+
+点对点的直连项目: 消费者直接访问服务提供者，**没有注册中心**。
+
++ 消费者必须指定服务 提供者的访问地址（url）。 
+
++ 消费者直接通过 url 地址访问固定的服务提供者。这个 url 地址是不变的。
+
+  ![直连方式dubbo](../../_media/直连方式dubbo.png)
+
+
+
+### link-service-interface：接口工程
+
++ 项目结构
+
+  ```java
+  |-- src
+  	|-- main
+  		|-- java
+  			|-- top.
+  				|-- ixfosa
+  					|-- service
+                          |-- HelloService.java
+                          |-- SayService.java
+                   	|-- App.java
+  ```
+
+  
+
++ HelloService.java
+
+  ```java
+  public interface HelloService {
+      void hello();
+  }
+  ```
+
+  
+
++ SayService.java
+
+  ```java
+  public interface SayService {
+      void say();
+  }
+  ```
+
+  
+
+### link-service-provider：服务提供者
+
++ 项目结构
+
+  ```java
+  |-- src
+  	|-- main
+  		|-- java
+  			|-- top
+  				|-- ixfosa
+  					|-- service
+                          |-- impl
+                          	|-- HelloServiceImpl.java
+                   	|-- App.java
+      	|-- resources
+      		|-- provider.xml
+  |-- pom.xml
+  ```
+
++ pom.xml
+
+  ```xml
+  <!-- 引入dubbo -->
+  <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+      <version>2.6.2</version>
+  </dependency>
+  
+  <!-- 注册中心使用的是zookeeper，引入操作zookeeper的客户端端 -->
+  <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+      <version>2.12.0</version>
+  </dependency>
+  
+  <!-- 接口工程,公共资源项目 -->
+  <dependency>
+      <groupId>top.ixfosa</groupId>
+      <artifactId>link-service-interface</artifactId>
+      <version>1.0</version>
+  </dependency>
+  
+  <!-- Spring依赖 -->
+  <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.2.16.RELEASE</version>
+  </dependency>
+  ```
+
++ HelloServiceImpl.java
+
+  ```java
+  public class HelloServiceImpl implements HelloService {
+      @Override
+      public void hello() {
+          System.out.println("Hello Dubbo...");
+      }
+  }
+  ```
+
++ provider.xml
+
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://dubbo.apache.org/schema/dubbo
+         http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+  
+      <!-- 声明dubbo服务提供者的名称:保证唯一性 -->
+      <dubbo:application name="link-service-provider" />
+  
+  
+      <!--设置dubbo使用的协议和端口号
+          name:dubbo使用协议的名称
+          port:dubbo服务的端口号
+      -->
+      <dubbo:protocol name="dubbo" port="20880" />
+  
+      <!-- 暴露服务   ref：指向服务的真正的实现对象 -->
+      <dubbo:service interface="top.ixfosa.service.HelloService"
+                     ref="helloService" registry="N/A">
+  
+      </dubbo:service>
+  
+      <!-- 加载业务接口的实现类到spring容器中 -->
+      <bean id="helloService" class="top.ixfosa.service.impl.HelloServiceImpl" />
+  </beans>
+  ```
+
++ App.java
+
+  ```java
+  public class App {
+      public static void main( String[] args ) throws IOException {
+          ClassPathXmlApplicationContext ioc =
+                  new ClassPathXmlApplicationContext("provider.xml");
+  
+          ioc.start();
+          System.in.read();
+      }
+  }
+  ```
+
+
+
+### link-service-consumer：服务消费者
+
++ 项目结构
+
+  ```java
+  |-- src
+  	|-- main
+  		|-- java
+  			|-- top
+  				|-- ixfosa
+  					|-- service
+                          |-- impl
+                          	|-- SayServiceImpl.java
+                   	|-- App.java
+      	|-- resources
+      		|-- consumer.xml
+  |-- pom.xml
+  ```
+
++ pom.xml
+
+  ```xml
+  <!-- 引入dubbo -->
+  <!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
+  <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>dubbo</artifactId>
+      <version>2.6.2</version>
+  </dependency>
+  <!-- 注册中心使用的是zookeeper，引入操作zookeeper的客户端端 -->
+  <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+      <version>2.12.0</version>
+  </dependency>
+  
+  <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>5.2.16.RELEASE</version>
+  </dependency>
+  
+  <!-- 接口工程 -->
+  <dependency>
+      <groupId>top.ixfosa</groupId>
+      <artifactId>link-service-interface</artifactId>
+      <version>1.0</version>
+  </dependency>
+  ```
+
++ SayServiceImpl.java
+
+  ```java
+  @Service
+  public class SayServiceImpl implements SayService  {
+      @Autowired
+      private HelloService helloService;
+  
+      @Override
+      public void say() {
+          System.out.println("say...");
+          helloService.hello();
+      }
+  }
+  ```
+
++ consumer.xml
+
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:context="http://www.springframework.org/schema/context"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+  	   http://www.springframework.org/schema/context/spring-context-4.3.xsd
+         http://dubbo.apache.org/schema/dubbo
+         http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+  
+      <!-- 开启Spring注解扫描 -->
+      <context:component-scan base-package="top.ixfosa.service.impl" />
+      <!-- 指定当前服务/应用的名字 -->
+      <dubbo:application name="link-service-provider" />
+  
+  
+      <!-- 引用远程接口服务 -->
+      <dubbo:reference
+              interface="top.ixfosa.service.HelloService"
+              id="helloService"
+              url="dubbo://localhost:20880"
+              registry="N/A"
+      />
+  </beans>
+  ```
+
+  
+
+```java
+// service-provider：服务提供者 控制台输出
+Hello Dubbo...
+
+//service-consumer：服务消费者 控制台输出
+say...
+Hello World!
+调用完成....
+```
+
+
+
+## 整合SpringBoot
+
+
+
+
+
+
+
