@@ -2240,7 +2240,7 @@ public class User implements Serializable {
 
 
 
-#### 创建接口 Dao
+#### 创建接口 Repository
 
 ```java
 public interface UserDao extends JpaRepository<User, Integer> {
@@ -2264,7 +2264,7 @@ public interface UserService {
 
 
 
-#### 创建接口 ServiceIm
+#### 创建接口 ServiceImpl
 
 ```java
 @Service
