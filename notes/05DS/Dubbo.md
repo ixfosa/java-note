@@ -787,7 +787,6 @@ Hello World!
       <!-- 指定当前服务/应用的名字 -->
       <dubbo:application name="link-service-provider" />
   
-  
       <!-- 引用远程接口服务 -->
       <dubbo:reference
               interface="top.ixfosa.service.HelloService"
@@ -814,9 +813,335 @@ Hello World!
 
 ## 整合SpringBoot
 
+### 公共资源项目
+
++ 项目结构
+
+  <img src="../../_media/公共资源项目.png" alt="公共资源项目" style="zoom:50%;" />
+
++ 数据模型 Student
+
+  ```java
+  @Data
+  @AllArgsConstructor
+  public class Student implements Serializable {
+      private Integer id;
+      private String name;
+      private Integer age;
+      private Character gender;
+  }
+  ```
+
++ 公共接口
+
+  + StudentService.java
+
+    ```java
+    public interface StudentService {
+        List<Student> findStuList();
+    }
+    ```
+
+  + TeacherService
+
+    ```java
+    public interface TeacherService {
+        List<Student> initStuList();
+    }
+    ```
+
++ pom.xml
+
+  ```xml
+  <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.20</version>
+  </dependency>
+  ```
+
+
+
+### 直连方式
+
+#### 服务提供者
+
++ 项目结构
+
+  <img src="../../_media/服务提供者.png" alt="服务提供者" style="zoom:50%;" />
+
++ pom.xml 依赖
+
+  ```xml
+  <dependencies>
+      <!-- MyBatis-Plus 依赖 -->
+      <dependency>
+          <groupId>com.baomidou</groupId>
+          <artifactId>mybatis-plus-boot-starter</artifactId>
+          <version>3.4.3.1</version>
+      </dependency>
+      <!-- MySQL 驱动-->
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <scope>runtime</scope>
+      </dependency>
+      <!-- 数据库连接池 -->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>druid</artifactId>
+          <version>1.1.10</version>
+      </dependency>
+      <!-- Spring-Boot Dubbbo 启动器 -->
+      <dependency>
+          <groupId>com.alibaba.boot</groupId>
+          <artifactId>dubbo-spring-boot-starter</artifactId>
+          <version>0.2.0</version>
+      </dependency>
+      <!-- 接口工程 -->
+      <dependency>
+          <groupId>top.ixfosa</groupId>
+          <artifactId>springboot-service-interface</artifactId>
+          <version>1.0</version>
+      </dependency>
+   	<dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+      </dependency>
+  </dependencies>
+  ```
+
++ application.properties
+
+  ```properties
+  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+  spring.datasource.url=jdbc:mysql://localhost:3306/springdata?useUnicode=true&characterEncoding=utf8
+  spring.datasource.username=root
+  spring.datasource.password=ixfosa
+  spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
+  
+  # dubbo 相关配置
+  # <!-- 声明dubbo服务提供者的名称:保证唯一性 -->
+  # <dubbo:application name="link-service-provider" />
+  dubbo.application.name=springboot-service-provider
+  
+  # 设置dubbo使用的协议和端口号
+  # <dubbo:protocol name="dubbo" port="20880" />
+  dubbo.protocol.name=dubbo
+  dubbo.protocol.port=20880
+  dubbo.registry.address=N/A
+  ```
+
++ StudentMapperjava
+
+  ```java
+  @Repository
+  public interface StudentMapper extends BaseMapper<Student> {
+  }
+  ```
+
++ StudentServiceImpl.java
+
+  ````java
+  @Service // 暴露服务
+  @Component
+  public class StudentServiceImpl implements StudentService {
+  
+      @Autowired
+      private StudentMapper mapper;
+  
+      @Override
+      public List<Student> findStuList() {
+          return mapper.selectList(null);
+      }
+  }
+  ````
+
++ SpringbootServiceProviderApplication.java
+
+  ```java
+  @SpringBootApplication
+  @MapperScan("top.ixfosa.mapper")
+  @EnableDubbo(scanBasePackages="top.ixfosa.service")
+  public class SpringbootServiceProviderApplication {
+  
+      public static void main(String[] args) throws IOException {
+          SpringApplication.run(SpringbootServiceProviderApplication.class, args);
+          System.in.read();
+      }
+  }
+  ```
+
+
+
+#### 服务消费者
+
++ 项目结构
+
+  <img src="../../_media/服务消费者.png" alt="服务消费者" style="zoom:50%;" />
+
++ pom.xml 依赖
+
+  ```xml
+  <dependencies>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+          <groupId>com.alibaba.boot</groupId>
+          <artifactId>dubbo-spring-boot-starter</artifactId>
+          <version>0.2.0</version>
+      </dependency>
+      
+      <dependency>
+          <groupId>top.ixfosa</groupId>
+          <artifactId>springboot-service-interface</artifactId>
+          <version>1.0</version>
+      </dependency>
+  </dependencies>
+  ```
+
+  
+
++ application.properties
+
+  ```properties
+  # 指定当前服务/应用的名字
+  # <dubbo:application name="link-service-provider" />
+  dubbo.application.name=spring-service-consumer
+  ```
+
++ TeacherServiceImpl.java
+
+  ````java
+  @Component
+  public class TeacherServiceImpl implements TeacherService {
+      @Reference(url = "dubbo://localhost:20880")  // dubbo直连
+      private StudentService studentService;
+      @Override
+      public List<Student> initStuList() {
+          return studentService.findStuList();
+      }
+  }
+  ````
+
++ TeacherController.java
+
+  ````java
+  @RestController
+  public class TeacherController {
+      @Autowired
+      private TeacherService teacherService;
+  
+      @RequestMapping("list")
+      public List<Student> list() {
+          return teacherService.initStuList();
+      }
+  }
+  ````
+
++ SpringbootServiceConsumerApplication.java
+
+  ```java
+  @SpringBootApplication
+  @EnableDubbo(scanBasePackages = "top.ixfosa.controller")
+  public class SpringbootServiceConsumerApplication {
+  
+      public static void main(String[] args) {
+          SpringApplication.run(SpringbootServiceConsumerApplication.class, args);
+      }
+  }
+  ```
+
+> 访问：`http://localhost:8080/list`
+
+
+
+### 使用注册中心方式
+
++ 修改 application.properties
+
+  + 服务提供者
+
+    ```properties
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    spring.datasource.url=jdbc:mysql://localhost:3306/springdata?useUnicode=true&characterEncoding=utf8
+    spring.datasource.username=root
+    spring.datasource.password=ixfosa
+    spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
+    
+    # dubbo 相关配置
+    # <!-- 声明dubbo服务提供者的名称:保证唯一性 -->
+    # <dubbo:application name="link-service-provider" />
+    dubbo.application.name=springboot-service-provider
+    
+    # 设置dubbo使用的协议和端口号
+    # <dubbo:protocol name="dubbo" port="20880" />
+    # dubbo.protocol.name=dubbo
+    # dubbo.protocol.port=20880
+    # dubbo.registry.address=N/A
+    
+    # 使用 zookeeper 注册中心
+    dubbo.registry.address=127.0.0.1:2181
+    dubbo.registry.protocol=zookeeper
+    ```
+
+  + 服务消费者
+
+    ```properties
+    server.port=8888   // 8080 端口被 dubbo-admin-server 占用
+    
+    # 指定当前服务/应用的名字
+    # <dubbo:application name="link-service-provider" />
+    dubbo.application.name=spring-service-consumer
+    dubbo.registry.address=zookeeper://127.0.0.1:2181
+    ```
+
++ 修改 服务消费者 TeacherServiceImpl.java：
+
+  ```java
+  @Component
+  public class TeacherServiceImpl implements TeacherService {
+  
+      @Reference // (url = "dubbo://localhost:20880")
+      private StudentService studentService;
+      @Override
+      public List<Student> initStuList() {
+          return studentService.findStuList();
+      }
+  }
+  ```
+
+> 访问：http://localhost:8888/list
+
+![springboot整合dubbo-zookeeper](../../_media/springboot整合dubbo-zookeeper.png)
+
+
+
+## dubbo 常用标签
 
 
 
 
 
 
+
+## dubbo配置
+
+
+
+
+
+
+
+
+
+## 注册中心的高可用
