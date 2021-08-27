@@ -393,7 +393,7 @@
   - [整合 SpringBoot](http://java.ixfosa.top/#/notes/03Framework/SpringBoot?id=整合-springboot)
 
 
-### [Spring Security](http://java.ixfosa.top/#/notes/03Framework/SpringSecurity)
+### [Spring Securit](http://java.ixfosa.top/#/notes/03Framework/SpringSecurit)
 
 ### [Shiro](http://java.ixfosa.top/#/notes/03Framework/Shiro)
 
@@ -413,7 +413,17 @@
 
 ## 分布式
 
-### [Dubbo]()
+### [Dubbo](http://java.ixfosa.top/#/notes/05DS/Dubbo)
+
++ [RPC 基础知识](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=rpc-基础知识)
++ [Dubbo 概述](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=dubbo-概述)
++ [注册中心-Zookeeper](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=注册中心-zookeeper)
++ [dubbo-admin 监控中心](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=dubbo-admin-监控中心)
++ [使用 Zookeeper](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=使用-zookeeper)
++ [直连方式](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=直连方式)
++ [整合SpringBoot](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=整合springboot)
++ [dubbo 常用配置](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=dubbo-常用配置)
++ [注册中心的高可用](http://java.ixfosa.top/#/notes/05DS/Dubbo?id=注册中心的高可用)
 
 
 
