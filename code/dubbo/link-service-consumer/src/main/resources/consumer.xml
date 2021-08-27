@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- 开启Spring注解扫描 -->
+    <context:component-scan base-package="top.ixfosa.service.impl" />
+    <!-- 指定当前服务/应用的名字 -->
+    <dubbo:application name="link-service-provider" />
+
+
+    <!-- 引用远程接口服务 -->
+    <dubbo:reference
+            interface="top.ixfosa.service.HelloService"
+            id="helloService"
+            url="dubbo://localhost:20880"
+            registry="N/A"
+    />
+
+</beans>

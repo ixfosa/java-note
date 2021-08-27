@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- 声明dubbo服务提供者的名称:保证唯一性 -->
+    <dubbo:application name="link-service-provider" />
+
+
+    <!--设置dubbo使用的协议和端口号
+        name:dubbo使用协议的名称
+        port:dubbo服务的端口号
+    -->
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <!-- 暴露服务   ref：指向服务的真正的实现对象 -->
+    <dubbo:service interface="top.ixfosa.service.HelloService"
+                   ref="helloService" registry="N/A">
+
+    </dubbo:service>
+
+    <!-- 加载业务接口的实现类到spring容器中 -->
+    <bean id="helloService" class="top.ixfosa.service.impl.HelloServiceImpl" />
+</beans>

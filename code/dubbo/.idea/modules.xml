@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/link-service-consumer/link-service-consumer.iml" filepath="$PROJECT_DIR$/link-service-consumer/link-service-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/link-service-interface/link-service-interface.iml" filepath="$PROJECT_DIR$/link-service-interface/link-service-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/link-service-provider/link-service-provider.iml" filepath="$PROJECT_DIR$/link-service-provider/link-service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-consumer/service-consumer.iml" filepath="$PROJECT_DIR$/service-consumer/service-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-interface/service-interface.iml" filepath="$PROJECT_DIR$/service-interface/service-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-provider/service-provider.iml" filepath="$PROJECT_DIR$/service-provider/service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-service-consumer/springboot-service-consumer.iml" filepath="$PROJECT_DIR$/springboot-service-consumer/springboot-service-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-service-interface/springboot-service-interface.iml" filepath="$PROJECT_DIR$/springboot-service-interface/springboot-service-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-service-provider/springboot-service-provider.iml" filepath="$PROJECT_DIR$/springboot-service-provider/springboot-service-provider.iml" />
+    </modules>
+  </component>
+</project>

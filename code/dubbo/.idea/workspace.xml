@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b4b11d1c-38c9-4e20-8f27-ec8239d15856" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\software\maven\repository" />
+        <option name="mavenHome" value="D:/software/maven/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="D:\software\maven\apache-maven-3.8.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1xDGDKUpC6rLQsyA3OcSPSH3w8F" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/link-service-consumer/src/main/resources" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.34712642" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="top.ixfosa" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.ixfosa.model.student" />
+      <recent name="top.ixfosa.service.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\IdeaProjects\dubbo\link-service-consumer\src\main\resources" />
+      <recent name="D:\code\IdeaProjects\dubbo\link-service-consumer\src\main\java" />
+      <recent name="D:\code\IdeaProjects\dubbo\link-service-provider\src\main\resources" />
+      <recent name="D:\code\IdeaProjects\dubbo\link-service-provider\src\main\java" />
+      <recent name="D:\code\IdeaProjects\dubbo\link-service-interface\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringbootServiceProviderApplication">
+    <configuration name="App (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.App" />
+      <module name="service-consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.App" />
+      <module name="link-service-provider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.App" />
+      <module name="link-service-consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootServiceProviderApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot-service-provider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="top.ixfosa" />
+      <option name="MAIN_CLASS_NAME" value="top.ixfosa.SpringbootServiceProviderApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootServiceConsumerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="springboot-service-consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.ixfosa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ixfosa.SpringbootServiceConsumerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootServiceConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot-service-provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ixfosa.SpringbootServiceConsumerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootServiceProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot-service-provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.ixfosa.SpringbootServiceProviderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.SpringbootServiceConsumerApplication (1)" />
+        <item itemvalue="JUnit.SpringbootServiceProviderApplicationTests.contextLoads" />
+        <item itemvalue="Application.App (3)" />
+        <item itemvalue="Application.App (2)" />
+        <item itemvalue="Application.App (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4b11d1c-38c9-4e20-8f27-ec8239d15856" name="Default Changelist" comment="" />
+      <created>1629882124586</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629882124586</updated>
+      <workItem from="1629882128253" duration="4121000" />
+      <workItem from="1629949057653" duration="16263000" />
+      <workItem from="1630043427313" duration="6293000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="235" y="52" key="#HTTP_Proxy" timestamp="1629882876524">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="235" y="52" key="#HTTP_Proxy/0.0.1280.770@0.0.1280.770" timestamp="1629882876524" />
+    <state x="233" y="43" key="#Project_Structure" timestamp="1629965304355">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="233" y="43" key="#Project_Structure/0.0.1280.770@0.0.1280.770" timestamp="1629965304355" />
+    <state x="446" y="88" key="#com.intellij.ide.util.MemberChooser" timestamp="1630046047207">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="446" y="88" key="#com.intellij.ide.util.MemberChooser/0.0.1280.770@0.0.1280.770" timestamp="1630046047207" />
+    <state x="255" y="301" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1630044258297">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="255" y="301" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.770@0.0.1280.770" timestamp="1630044258297" />
+    <state x="419" y="263" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1629886021152">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="419" y="263" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1280.770@0.0.1280.770" timestamp="1629886021152" />
+    <state x="371" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629966148177">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="371" y="131" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.770@0.0.1280.770" timestamp="1629966148177" />
+    <state width="1238" height="-12" key="GridCell.Tab.0.bottom" timestamp="1630052378008">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.0.bottom/0.0.1280.770@0.0.1280.770" timestamp="1630052378008" />
+    <state width="1238" height="-12" key="GridCell.Tab.0.center" timestamp="1630052378008">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.0.center/0.0.1280.770@0.0.1280.770" timestamp="1630052378008" />
+    <state width="1238" height="-12" key="GridCell.Tab.0.left" timestamp="1630052378008">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.0.left/0.0.1280.770@0.0.1280.770" timestamp="1630052378008" />
+    <state width="1238" height="-12" key="GridCell.Tab.0.right" timestamp="1630052378008">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.0.right/0.0.1280.770@0.0.1280.770" timestamp="1630052378008" />
+    <state width="1238" height="-12" key="GridCell.Tab.1.bottom" timestamp="1630052378008">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.1.bottom/0.0.1280.770@0.0.1280.770" timestamp="1630052378008" />
+    <state width="1238" height="-12" key="GridCell.Tab.1.center" timestamp="1630052378008">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.1.center/0.0.1280.770@0.0.1280.770" timestamp="1630052378008" />
+    <state width="1238" height="-12" key="GridCell.Tab.1.left" timestamp="1630052378008">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.1.left/0.0.1280.770@0.0.1280.770" timestamp="1630052378008" />
+    <state width="1238" height="-12" key="GridCell.Tab.1.right" timestamp="1630052378008">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state width="1238" height="-12" key="GridCell.Tab.1.right/0.0.1280.770@0.0.1280.770" timestamp="1630052378008" />
+    <state x="171" y="40" key="Maven.ArtifactSearchDialog" timestamp="1629988786593">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="171" y="40" key="Maven.ArtifactSearchDialog/0.0.1280.770@0.0.1280.770" timestamp="1629988786593" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1629968387691">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.770@0.0.1280.770" timestamp="1629968387691" />
+    <state x="6" y="0" key="new project wizard" timestamp="1629968566962">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="6" y="0" key="new project wizard/0.0.1280.770@0.0.1280.770" timestamp="1629968566962" />
+    <state x="303" y="92" key="search.everywhere.popup" timestamp="1630044552041">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="303" y="92" key="search.everywhere.popup/0.0.1280.770@0.0.1280.770" timestamp="1630044552041" />
+    <state x="321" y="0" key="spring file set editor" timestamp="1629882837266">
+      <screen x="0" y="0" width="1280" height="770" />
+    </state>
+    <state x="321" y="0" key="spring file set editor/0.0.1280.770@0.0.1280.770" timestamp="1629882837266" />
+  </component>
+</project>
