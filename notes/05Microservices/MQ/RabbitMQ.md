@@ -59,6 +59,17 @@
 
 > 如果尝试声明一个已经存在的交换器或者队列，只要声明的参数完全匹配现存的交换器或者队列，RabbitMQ 就可以什么都不做，并成功返回；如果声明的参数不匹配则会抛出异常
 
+
+
+消费者接收消息
+
+- 消费者连接到 RabbitMQ Broker，建立一个连接（Connection），开启一个信道（Channel）
+- 消费者向 RabbitMQ Broker **请求消费**相应队列中的消息，可能会设置相应的回调函数，以及做一些准备工作
+- 消费者等待 RabbitMQ Broker 回应并投递相应队列中的消息，消费者接收消息
+- 消费者确认（ack）接收到的消息
+- RabbitMQ 从队列中删除相应已经被确认的消息
+- 关闭信道，关闭连接
+
 ![rabbitmq工作原理](../../../_media/rabbitmq工作原理.jpg)
 
 
@@ -152,7 +163,7 @@ Oct 12 15:26:32 ixfosa rabbitmqctl[14424]: ===========
 Oct 12 15:26:32 ixfosa rabbitmqctl[14424]: attempted to contact: [rabbit@ixfosa]
 Oct 12 15:26:32 ixfosa rabbitmqctl[14424]: rabbit@ixfosa:
 Oct 12 15:26:32 ixfosa rabbitmqctl[14424]: * unable to connect to epmd (port 4369) on ixfosa: timeout (timed out)
-........
+............
 
 # 解决
 [root@ixfosa opt]#  vi /etc/hosts
@@ -162,4 +173,154 @@ Oct 12 15:26:32 ixfosa rabbitmqctl[14424]: * unable to connect to epmd (port 436
 
 
 ## Hello World
+
+用 Java 编写两个程序。发送单个消息的生产者和接收消息并打印 出来的消费者。
+
++ “ P”是生产者
++ “ C”是消费者。
++ 中间的框是一个队列-RabbitMQ 代表使用者保留的消息缓冲区
+
+![RabbitMQ-HelloWorld](../../../_media/RabbitMQ-HelloWorld.jpg)
+
+
+
+### POM依赖
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ixfosa.top</groupId>
+  <artifactId>rabbitmq</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>rabbitmq</name>
+    
+  <dependencies>
+    <!--rabbitmq 依赖客户端-->
+    <dependency>
+      <groupId>com.rabbitmq</groupId>
+      <artifactId>amqp-client</artifactId>
+      <version>5.8.0</version>
+    </dependency>
+    <!--操作文件流的一个依赖-->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <!--指定 jdk 编译版本-->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+
+
+### 生产者
+
+```java
+public class Producer {
+    public static final String QUEUE = "hello";
+
+    public static void main(String[] args) throws Exception {
+        // 创建一个连接工厂
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.setHost("192.168.1.129");
+        factory.setUsername("admin");
+        factory.setPassword("ixfosa");
+
+        // channel 实现了自动 close 接口 自动关闭 不需要显示关闭
+        Connection connection = factory.newConnection();
+
+        Channel channel = connection.createChannel();
+
+        /**
+         * 生成一个队列
+         * 1. 队列名称
+         * 2. 队列里面的消息是否持久化 默认消息存储在内存中
+         * 3. 该队列是否只供一个消费者进行消费 是否进行共享 true 可以多个消费者消费
+         * 4. 是否自动删除 最后一个消费者端开连接以后 该队列是否自动删除 true 自动删除
+         * 5. 其他参数,一些消息代理用他来完成类似与TTL的某些额外功能
+         */
+        channel.queueDeclare(QUEUE, false, false, false, null);
+
+        String msg = "Hello RabbitMQ";
+
+        /**
+         * 发送一个消息, 使用默认交换机
+         * 1.发送到那个交换机
+         * 2.路由的 key 是哪个
+         * 3.其他的参数信息
+         * 4.发送消息的消息体
+         */
+        channel.basicPublish("", QUEUE, null, msg.getBytes());
+			
+        System.out.println("消息发送完毕...");
+
+    }
+}
+```
+
+
+
+### 消费者
+
+```java
+public class Consumer {
+    public static final String QUEUE = "hello";
+
+    public static void main(String[] args) throws IOException, TimeoutException {
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.setHost("192.168.1.129");
+        factory.setUsername("admin");
+        factory.setPassword("ixfosa");
+
+        Channel channel = factory.newConnection().createChannel();
+
+        System.out.println("等待接收消息....");
+
+        // 推送的消息如何进行消费的接口回调
+        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+            String msg = new String(delivery.getBody());
+            System.out.println(msg);
+        };
+        // 取消消费的一个回调接口
+        CancelCallback cancelCallback = consumerTag -> {
+            System.out.println("消息消费被中断");
+        };
+        /**
+         * 消费者消费消息
+         * 1. 消费哪个队列
+         * 2. 消费成功之后是否要自动应答 true 代表自动应答 false 手动应答
+         * 3. 消费者未成功消费的回调
+         */
+        channel.basicConsume(QUEUE, true, deliverCallback, cancelCallback);
+
+    }
+}
+```
+
+
 
