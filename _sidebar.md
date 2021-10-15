@@ -30,8 +30,12 @@
   + [Spring Data](notes/03Framework/SpringData)
   + [Spring Boot](notes/03Framework/SpringBoot)
   + [Shiro](notes/03Framework/Shiro)
-+ Distributed
-  + [Dubbo](notes/05DS/Dubbo)
++ Microservices
+
+  + [Dubbo](notes/05Microservices/Dubbo)
+  + [MQ](notes/05Microservices/MQ/RabbitMQ)
+    + [MQ相关概念](notes/05Microservices/MQ/MQ相关概念)
+    + [RabbitMQ](notes/05Microservices/MQ/RabbitMQ)
 
 
 
