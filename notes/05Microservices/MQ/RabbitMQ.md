@@ -324,3 +324,132 @@ public class Consumer {
 
 
 
+## Work Queues
+
+**工作队列模式**：一个生产者，一个消息队列，多个消费者（点对多）
+
++ 为了避免立即执行资源密集型任务，而不得不等待它完成。
++ 把任务封装为消息并将其发送到队列。在后台运行的工作进程将弹出任务并最终执行作业。当有多个工作线程时，这些工作线程将一起处理这些任务。
+
+![WorkQueues](../../../_media/WorkQueues.jpg)
+
+### 轮训分发消息
+
+启动两个工作线程，一个消息发送线程
+
+#### 抽取工具类
+
+```java
+public class RabbitMqUtils {
+
+    public static Channel getChannel() {
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.setHost("192.168.1.129");
+        factory.setUsername("admin");
+        factory.setPassword("ixfosa");
+
+        Channel channel = null;
+        try {
+            channel = factory.newConnection().createChannel();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        }
+        return channel;
+    }
+}
+```
+
+
+
+#### 工作线程
+
+```java
+public class WorkerOne {
+    public static final String QUEUE = "hello";
+    public static void main(String[] args) throws Exception{
+        Channel channel = RabbitMqUtils.getChannel();
+
+        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+            String receivedMessage = new String(delivery.getBody());
+            System.out.println("接收到消息:"+receivedMessage);
+        };
+
+        CancelCallback cancelCallback = consumerTag -> {
+            System.out.println(consumerTag+"消费者取消消费接口回调逻辑");
+        };
+        System.out.println("WorkerOne 消费者启动等待消费......");
+        channel.basicConsume(QUEUE, true, deliverCallback, cancelCallback);
+    }
+}
+// 结果：
+//- WorkerOne 消费者启动等待消费......
+//- 接收到消息:a
+//- 接收到消息:c
+```
+
+```java
+public class WorkerTwo {
+    public static final String QUEUE = "hello";
+    public static void main(String[] args) throws Exception{
+        Channel channel = RabbitMqUtils.getChannel();
+
+        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+            String receivedMessage = new String(delivery.getBody());
+            System.out.println("接收到消息:"+receivedMessage);
+        };
+
+        CancelCallback cancelCallback = consumerTag -> {
+            System.out.println(consumerTag+"消费者取消消费接口回调逻辑");
+        };
+        System.out.println("WorkerTwo 消费者启动等待消费......");
+        channel.basicConsume(QUEUE, true, deliverCallback, cancelCallback);
+    }
+}
+
+// 结果：
+//- WorkerTwo 消费者启动等待消费......
+//- 接收到消息:b
+//- 接收到消息:d
+```
+
+#### 发送线程
+
+```java
+public class Task {
+    public static final String QUEUE = "hello";
+    public static void main(String[] args) throws IOException {
+        Channel channel = RabbitMqUtils.getChannel();
+        channel.queueDeclare(QUEUE, false, false, false, null);
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String msg = scanner.next();
+            channel.basicPublish("", QUEUE, null, msg.getBytes());
+        }
+    }
+}
+
+// 控制台输入：
+a
+b
+c
+d
+```
+
+
+
+### 消息应答
+
+####  概念 
+
+#### 自动应答 
+
+#### 消息应答的方法 
+
+#### Multiple 的解释 
+
+
+
+
+
