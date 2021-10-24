@@ -36,7 +36,7 @@
   + [MQ](notes/05Microservices/MQ/RabbitMQ)
     + [MQ相关概念](notes/05Microservices/MQ/MQ相关概念)
     + [RabbitMQ](notes/05Microservices/MQ/RabbitMQ)
-    + [Spring Cloud](notes/05Microservices/MQ/SpringCloud)
+  + [Spring Cloud](notes/05Microservices/MQ/SpringCloud)
 
 
 
