@@ -2194,7 +2194,7 @@ public class ResMapTest01 {
 
 #### 使用POJO存储结果集
 
-使用 POJO 的方式存储结果集，一方面可以使用自动映射，例如使用 resultType 属性，但有时候需要更为复杂的映射或级联，这时候就需要使用 <select> 元素的 resultMap 属性配置映射集合。具体步骤如下：
+使用 POJO 的方式存储结果集，一方面可以使用自动映射，例如使用 resultType 属性，但有时候需要更为复杂的映射或级联，这时候就需要使用 `<select>` 元素的 resultMap 属性配置映射集合。具体步骤如下：
 
 1. 创建 POJO 类
 
@@ -2235,14 +2235,12 @@ public class ResMapTest01 {
 
 3. 添加接口方法
 
-   
-
    ```java
    public interface FlowerDao {
        List<Flower> selectAllFlowerResMap();
    }
    ```
-
+   
 4. 调用接口方法
 
    ```java
@@ -2272,7 +2270,7 @@ public class ResMapTest01 {
 
 ```xml
 <settings>
-		<setting name="mapUnderscoreToCamelCase" value="true" />
+    <setting name="mapUnderscoreToCamelCase" value="true" />
 </settings>
 ```
 
@@ -2373,8 +2371,6 @@ public class ResMapTest01 {
 #### 关联查询
 
 在 MyBatis 中，通过 `<resultMap>` 元素的子元素 `<association>` 处理这种一对一级联关
-
-
 
 下面以个人与身份证之间的关系为例讲解一对一级联查询的处理过程
 
